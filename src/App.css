@@ -1,38 +1,150 @@
-.App {
+.add_btn {
+  text-align: left;
+  padding-bottom: 15px;
+}
+.backnext{
+  
+}
+
+
+.ems {
+  text-align: center;
+  text-decoration-line: underline;
+  padding-bottom: 10px;
+}
+
+.Main {
+  background-color: lightgrey;
+}
+/* 
+.container {
+  overflow: auto;
+  
+
+} */
+.box{
+  padding-top: 10px;
+}
+
+.select{
+  font-weight: 500;
+}
+
+.logo {
+  size-adjust: 100px;
+}
+
+.container-fluid {
+  background-color: white;
+
+}
+
+.nav-item {
+  font-size: 20px;
+  padding-left: 350px;
+
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-item:active {
+  font-weight: bold;
+  color: black;
+}
+
+.addbuttons{
+margin-right: 10px;}
+
+
+.nav-item1 {
+  font-size: 20px;
+  padding-left: 50px;
+  text-decoration: solid;
+
+
+}
+
+.nav-item1:hover {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+}
+
+ul .dropdown-menu{
+margin: 0;
+padding: 0;
+position: absolute;
+  z-index: 2;
+/* justify-content: center; */
+/* float: right ; */
+/* display: inline-block; */
+}
+
+li.dropdown-item{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.title {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.adduser {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+
+.leftview {
+  font-size: 21px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rightview {
+  font-size: 21px;
+  text-align: center;
 }
+
+.welcome {
+  text-align: left;
+  padding-bottom: 10px;
+
+}
+
+/*   */
+.name {
+  justify-content: space-between;
+  display: flex;
+}
+
+.backbtn {
+
+  justify-content: space-between;
+  display: flex;
+}
+
+
+body {
+  background-color: #fbfbfb;
+}
+
+/* @media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+} */
+
+
+
+
+
+
+ 
+

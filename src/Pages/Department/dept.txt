@@ -1,0 +1,591 @@
+import React, { useState, useEffect } from "react";
+import { urldpost, urlget } from "../Config";
+import DatePicker from "react-datepicker";
+// import { DatePicker } from "rsuite";
+// import Toggle from "react-bootstrap-toggle";
+// import Switch from "react-switch";
+
+import "react-datepicker/dist/react-datepicker.css";
+import {
+  NavLink,
+  UNSAFE_DataRouterStateContet,
+  useParams,
+} from "react-router-dom";
+import { Switch } from "@mui/material";
+const DepartRegister = () => {
+  const [inpval, setINP] = useState({
+    EmployeeCode: "",
+    DepartmentID: "",
+    EmployeeFirstName: "",
+    EmployeeLastName: "",
+    DepartmentName: "",
+    DepartmentHead: "",
+    DateOfJoining: "",
+    LastDate: "",
+    Status: "",
+    Status1: "",
+  });
+
+  const setdata = (e) => {
+    console.log(e.target.value);
+    const { name, value } = e.target;
+    setINP((val) => {
+      return {
+        ...val,
+        [name]: value,
+      };
+    });
+  };
+
+  // const [unit, setUnit] = useState("Active");
+  // const toggleDisplay = () => {
+  //   if (unit === "Active") {
+  //     setUnit("Active");
+  //     console.log(unit);
+  //   }
+  // };
+
+  const addinpdata = async (e) => {
+    e.preventDefault();
+    const {
+      EmployeeCode,
+      DepartmentID,
+      EmployeeFirstName,
+      EmployeeLastName,
+      DepartmentName,
+      DepartmentHead,
+      DateOfJoining,
+      LastDate,
+      Status,
+      Status1,
+    } = inpval;
+    const res = await fetch(urldpost, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        EmployeeCode,
+        DepartmentID,
+        EmployeeFirstName,
+        EmployeeLastName,
+        DepartmentName,
+        DepartmentHead,
+        DateOfJoining,
+        LastDate,
+        Status,
+        Status1,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status === 422 || !data) {
+      alert("fill the data");
+    } else {
+      alert("Data Added Successfully");
+    }
+  };
+
+  const [getuserdata, setUserdata, setDLTdata] = useState([]);
+  const [selects, setSelects] = useState();
+
+  console.log(getuserdata);
+
+  const getdata = async (e) => {
+    const res = await fetch(urlget, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status === 422 || !data) {
+      console.log("error");
+    } else {
+      setUserdata(data);
+      console.log("getdata");
+    }
+  };
+
+  useEffect(() => {
+    getdata();
+  }, []);
+
+  // const [date, setDate] = useState(new Date());
+  // const [startDate, setStartDate] = useState(new Date());
+
+  // const [value, onChange] = useState(new Date());
+
+  // const [toggle, setToggle] = useState(false);
+
+  // const toggler = () => {
+  //   toggle ? setToggle(false) : setToggle(true);
+  // };
+
+  // const [toggle, setToggle] = useState();
+  // const [toggle1, setToggle1] = useState();
+
+  // const setswitch = (e) => {
+  //   console.log(e.target.value);
+  //   const { name, value } = e.target;
+  //   setToggle((val) => {
+  //     return {
+  //       ...val,
+  //       [name]: value,
+  //     };
+  //   });
+  // };
+
+  return (
+    <header>
+      <div className="Auth-form-container1">
+        <form className="Auth-form1">
+          <div className="Auth-form-content1">
+            <h4 className="Auth-form-title1">Department Joining.</h4>
+            <br></br>
+
+            <div className="row">
+              {/* <div className="mb-4 col-lg-2 col-md-4 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Employee Code:
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter Salarycode"
+                  id="ExampleInputCode"
+                  value={inpval.EmployeeCode}
+                  onChange={setdata}
+                  name="EmployeeCode"
+                />
+              </div> */}
+
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Employee Code:
+                </label>
+
+                <form class="col-md-12">
+                  <select
+                    class="form-control select2"
+                    value={inpval.EmployeeCode}
+                    name="EmployeeCode"
+                    onChange={setdata}
+                  >
+                    <option>Select Code----</option>
+
+                    {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <option>{element.EmployeeCode}</option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </form>
+              </div>
+
+              <div className="mb-4 col-lg-2 col-md-4 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  DepartmentID:
+                </label>
+                {/* <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter EmployeeCode"
+                  id="ExampleInputCode"
+                  value={inpval.DepartmentID}
+                  onChange={setdata}
+                  name="DepartmentID"
+                /> */}
+
+                <form class="col-md-12">
+                  <select
+                    class="form-control select2"
+                    value={inpval.DepartmentID}
+                    name="DepartmentID"
+                    onChange={setdata}
+                  >
+                    <option>Select Code----</option>
+
+                    {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <option>{element.EmployeeCode}</option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </form>
+              </div>
+
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Employee Name:
+                </label>
+
+                <form class="col-md-12">
+                  <select
+                    class="form-control select2"
+                    value={inpval.EmployeeFirstName}
+                    name="EmployeeFirstName"
+                    onChange={setdata}
+                  >
+                    <option>Select Name----</option>
+
+                    {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <option>{element.EmployeeFirstName} </option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </form>
+              </div>
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Employee LastName:
+                </label>
+
+                <form class="col-md-12">
+                  <select
+                    class="form-control select2"
+                    value={inpval.EmployeeLastName}
+                    name="EmployeeLastName"
+                    onChange={setdata}
+                  >
+                    <option>Select Name----</option>
+
+                    {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <option>{element.EmployeeLastName}</option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </form>
+              </div>
+
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  DepartmentHead:
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter DepartmentHead"
+                  id="ExampleInputDepartmentHead"
+                  value={inpval.DepartmentHead}
+                  onChange={setdata}
+                  name="DepartmentHead"
+                />
+              </div>
+
+              {/* <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  DepartmentName:
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter DepartmentName"
+                  id="ExampleInputGrade"
+                  value={inpval.DepartmentName}
+                  onChange={setdata}
+                  name="DepartmentName"
+                />
+              </div> */}
+
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  DepartmentName:
+                </label>
+
+                <form class="col-md-12">
+                  <select
+                    class="form-control select2"
+                    value={inpval.DepartmentName}
+                    onChange={setdata}
+                    name="DepartmentName"
+                  >
+                    <option>Select Department----</option>
+                    <option>GITL</option>
+                    <option>DGTL</option>
+
+                    {/* {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <option>{element.EmployeeDepartment}</option>
+                        </>
+                      );
+                    })} */}
+                  </select>
+                </form>
+              </div>
+
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Date Of Joining:
+                </label>
+
+                {/* <DatePicker
+                  selected={startDate}
+                  // value={inpval.DateOfJoining}
+                  onChange={(date) => setdata(date)}
+                /> */}
+
+                {/* <DatePicker
+                  selected={date}
+                  // value={inpval.DateOfJoining}
+                  type="text"
+                  className="form-control"
+                  id="ExampleInputL1"
+                  onChange={setdata}
+                  value={inpval.DateOfJoining}
+                  onChange={(date) => setDate(date, setdata)}
+                  name="DateOfJoining"
+                /> */}
+
+                <input
+                  type="date"
+                  className="form-control"
+                  placeholder="dd/mm/yyyy"
+                  id="ExampleInputL1"
+                  value={inpval.DateOfJoining}
+                  onChange={setdata}
+                  name="DateOfJoining"
+                />
+              </div>
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  LastDate:
+                </label>
+                <input
+                  type="date"
+                  className="form-control"
+                  placeholder="dd/mm/yyyy"
+                  id="ExampleInputL1"
+                  value={inpval.LastDate}
+                  onChange={setdata}
+                  name="LastDate"
+                />
+              </div>
+
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Till Date:
+                </label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value={"-"}
+                    onChange={setdata}
+                    name="LastDate"
+                    id="flexRadioDefault1"
+                  ></input>
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Till Date
+                  </label>
+                </div>
+              </div>
+
+              {/* ------------------------------------------------------Toggle---------------------------------------------- */}
+              {/* <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                  value={inpval.Status}
+                  onChange={setdata}
+                  name="Status"
+                ></input>
+                <label class="form-check-label" for="flexSwitchCheckDefault">
+                  Active{" "}
+                </label>
+              </div> */}
+              {/* ------------------------------------------------------------------------------------------- */}
+              {/* <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="flexCheckIndeterminate"
+                    value={inpval.Status}
+                    onChange={setdata}
+                    name="Status"
+                  ></input>
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    Active
+                  </label>
+                </div> */}
+              {/* ------------------------------------------------------------------------------------------- */}
+              <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Status:{}
+                </label>
+                <br></br>
+                <>
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="Status"
+                    value="Active"
+                    onChange={setdata}
+                    id="success-outlined"
+                  />
+                  <label class="btn btn-outline-success" for="success-outlined">
+                    Active
+                  </label>
+
+                  <br></br>
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="Status"
+                    value="Not-Active"
+                    onChange={setdata}
+                    id="danger-outlined"
+                  />
+                  <br></br>
+                  <label class="btn btn-outline-danger" for="danger-outlined">
+                    Not-Active
+                  </label>
+                  {"  "}
+                </>
+              </div>
+
+              {/* <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="flexSwitchCheckDefault"
+                      value={"Active"}
+                      onChange={setdata}
+                      name="Status"
+                    ></input>
+                    <label
+                      class="form-check-label"
+                      for="flexSwitchCheckDefault"
+                    >
+                      Active{}
+                    </label>
+                  </div> */}
+              {/* <button className="temp" onClick={toggleDisplay}>
+                  {unit}
+                </button> */}
+              {/* <Switch
+                    type="checkbox"
+                    // onClick={setdata}
+                    value="Active"
+                    onChange={setdata}
+                    name="Status"
+                  ></Switch>
+
+                  <Switch
+                    type="radio"
+                    role="switch"
+                    // onClick={toggler}
+                    value="NoActive"
+                    onChange={setdata}
+                    setswitch
+                    name="Status"
+                  ></Switch>
+                </> */}
+
+              {/* {toggle ? <span> NonActive </span> : <span>Active</span>} */}
+              {/* ------------------------------------------------------------------------------------------- */}
+
+              {/* <div
+                className={`wrg-toggle ${toggle ? "wrg-toggle--checked" : ""}`}
+                onChange={triggerToggle}
+              >
+                {" "}
+                <div className="wrg-toggle-container">
+                  <div className="wrg-toggle-check">
+                    <span>Active</span>
+                  </div>
+                  <div className="wrg-toggle-uncheck">
+                    <span>NotActive</span>
+                  </div>
+                </div>
+                <div className="wrg-toggle-circle"></div>
+                <input
+                  className="wrg-toggle-input"
+                  type="checkbox"
+                  aria-label="Toggle Button"
+                />
+              </div> */}
+              {/* <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Status:
+                </label>
+
+                <form class="col-md-12">
+                  <select
+                    class="form-control select2"
+                    value={inpval.Status}
+                    onChange={setdata}
+                    name="Status"
+                  >
+                    <option>Select Status----</option>
+                    <option>Active</option>
+
+                    {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <option>{element.EmployeeDepartment}</option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </form>
+              </div> */}
+
+              {/* <div className="mb-4 col-lg-2 col-md-5 col-12">
+                <label for="ExampleInputPassword1" class=" form=label">
+                  Upload Photo:
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter UserName"
+                  id="ExampleInputPassword1"
+                />
+              </div> */}
+              <br></br>
+              <div className="d-grid gap-2 mt-3">
+                <div className="backbtn">
+                  {/* <button type="back" className="btn btn-primary">
+                    <a href="/employee">Back</a>
+                    Back
+                  </button> */}
+                  <h6>
+                    <a href="/department">Back</a>
+                  </h6>
+
+                  <button
+                    type="submit"
+                    onClick={addinpdata}
+                    className="btn btn-primary"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </header>
+  );
+};
+
+export default DepartRegister;
