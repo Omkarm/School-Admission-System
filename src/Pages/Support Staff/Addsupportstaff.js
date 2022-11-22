@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import axios, { post } from "axios";
-
+//ww
 import Multiselect from "multiselect-react-dropdown";
 
-import { turlpost, turlget } from "../Unknown/ConfigSupport";
+import { staffurlpost, staffurlget } from "../Unknown/ConfigSupport";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -208,7 +208,7 @@ const Addsupportstaff = () => {
     } = inpval; ////////////////////////////////////
 
     const { Skills, languages } = userinfo;
-    const res = await fetch(turlpost, {
+    const res = await fetch(staffurlpost, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -250,7 +250,7 @@ const Addsupportstaff = () => {
   console.log(getuserdata);
 
   const getdata = async (e) => {
-    const res = await fetch(turlget, {
+    const res = await fetch(staffurlget, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

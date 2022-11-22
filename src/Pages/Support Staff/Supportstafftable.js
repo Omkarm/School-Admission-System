@@ -5,7 +5,7 @@ import "jspdf-autotable";
 
 import { Button, Popover, OverlayTrigger } from "react-bootstrap";
 
-import { turlget, urldget, urldelete } from "../Unknown/ConfigSupport";
+import { staffurlget, urldget, urldelete } from "../Unknown/ConfigSupport";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -19,7 +19,7 @@ const Supportstafftable = () => {
   console.log(getuserdata);
 
   const getdata = async (e) => {
-    const res = await fetch(turlget, {
+    const res = await fetch(staffurlget, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
