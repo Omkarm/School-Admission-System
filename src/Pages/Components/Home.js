@@ -235,10 +235,10 @@ const Home = () => {
                         <a
                           className="nav-link active"
                           aria-current="page"
-                          href="/department"
+                          href="/supportstaff"
                           style={{ textAlign: "center" }}
                         >
-                          Workers
+                          Support Staff
                         </a>
                       </button>
                     </div>

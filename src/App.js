@@ -52,6 +52,9 @@ import Home from "./Pages/Components/Home";
 import Addteacher from "./Pages/Teacher/Addteacher";
 import Teachertable from "./Pages/Teacher/Teachertable";
 
+import Addsupportstaff from "./Pages/Support Staff/Addsupportstaff";
+import Supportstafftable from "./Pages/Support Staff/Supportstafftable";
+
 function App() {
   return (
     <div className="Main">
@@ -80,6 +83,19 @@ function App() {
           <Route
             path="/addteacher"
             element={[<Navbar></Navbar>, <Addteacher></Addteacher>]}
+          />
+
+          <Route
+            path="/supportstaff"
+            element={[
+              <Navbar></Navbar>,
+              <Supportstafftable></Supportstafftable>,
+            ]}
+          />
+
+          <Route
+            path="/addsupportstaff"
+            element={[<Navbar></Navbar>, <Addsupportstaff></Addsupportstaff>]}
           />
           {/* <Route path="/login" element={<Login></Login>} />
 
