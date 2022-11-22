@@ -72,7 +72,7 @@ const Home = () => {
           >
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                Dashboard
+                Management System
               </h5>
               <button
                 type="button"
@@ -150,7 +150,7 @@ const Home = () => {
                   >
                     <PersonAddOutlinedIcon />
                     {"   "}
-                    Employees <ArrowDropDownIcon />
+                    Student <ArrowDropDownIcon />
                   </button>
                   &nbsp;&nbsp;&nbsp;
                   <div class="collapse" id="collapseExample">
@@ -162,10 +162,10 @@ const Home = () => {
                         <a
                           className="nav-link active"
                           aria-current="page"
-                          href="/employee"
+                          href="/admission"
                           style={{ textAlign: "center" }}
                         >
-                          Employee
+                          Student Data
                         </a>
                       </button>
                       <br></br>
@@ -176,10 +176,55 @@ const Home = () => {
                         <a
                           className="nav-link active"
                           aria-current="page"
-                          href="/empregister"
+                          href="/addstudent"
                           style={{ textAlign: "center" }}
                         >
-                          Add Employee
+                          New Admission
+                        </a>
+                      </button>
+                    </div>
+                    <br></br>
+                  </div>
+                  <button
+                    class="btn btn-outline-dark btn-sm "
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#staff"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    <PersonAddOutlinedIcon />
+                    {"   "}
+                    Staff <ArrowDropDownIcon />
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
+                  <div class="collapse" id="staff">
+                    <div class="card card-body">
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark btn-sm "
+                      >
+                        <a
+                          className="nav-link active"
+                          aria-current="page"
+                          href="/employee"
+                          style={{ textAlign: "center" }}
+                        >
+                          Principle
+                        </a>
+                      </button>
+                      <br></br>
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark btn-sm "
+                      >
+                        <a
+                          className="nav-link active"
+                          aria-current="page"
+                          href="/teachertable"
+                          style={{ textAlign: "center" }}
+                        >
+                          Teachers
                         </a>
                       </button>
                       <br></br>
@@ -193,7 +238,7 @@ const Home = () => {
                           href="/department"
                           style={{ textAlign: "center" }}
                         >
-                          Update Employee
+                          Workers
                         </a>
                       </button>
                     </div>
@@ -208,23 +253,10 @@ const Home = () => {
                     >
                       <BadgeOutlinedIcon />
                       {"   "}
-                      Department
+                      Library
                     </a>
                   </button>
-                  &nbsp;&nbsp;&nbsp;
-                  <button type="button" class="btn btn-outline-dark btn-sm ">
-                    <a
-                      className="nav-link active"
-                      aria-current="page"
-                      href="/home"
-                      style={{ textAlign: "center" }}
-                    >
-                      <DescriptionOutlinedIcon />
-                      {"   "}
-                      Project
-                    </a>
-                  </button>
-                  &nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                   <button type="button" class="btn btn-outline-dark btn-sm ">
                     <a
                       className="nav-link active"

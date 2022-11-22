@@ -47,6 +47,10 @@ import Studenttable from "./Pages/Student/Studenttable";
 import Addstudent from "./Pages/Student/Addstudent";
 
 import Main from "./Pages/Student/Main";
+import Home from "./Pages/Components/Home";
+
+import Addteacher from "./Pages/Teacher/Addteacher";
+import Teachertable from "./Pages/Teacher/Teachertable";
 
 function App() {
   return (
@@ -57,10 +61,10 @@ function App() {
       <BrowserRouter>
         {/* <Account /> */}
         <Routes>
-          <Route path="/main" element={[<Navbar></Navbar>, <Main></Main>]} />
+          <Route path="/main" element={[<Main></Main>, <Home></Home>]} />
           <Route
             path="/admission"
-            element={[<Navbar></Navbar>, <Studenttable></Studenttable>]}
+            element={[<Studenttable></Studenttable>, <Home></Home>]}
           />
 
           <Route
@@ -68,6 +72,15 @@ function App() {
             element={[<Navbar></Navbar>, <Addstudent></Addstudent>]}
           />
 
+          <Route
+            path="/teachertable"
+            element={[<Teachertable></Teachertable>, <Home></Home>]}
+          />
+
+          <Route
+            path="/addteacher"
+            element={[<Navbar></Navbar>, <Addteacher></Addteacher>]}
+          />
           {/* <Route path="/login" element={<Login></Login>} />
 
           <Route path="/signup" element={<Signup></Signup>} /> */}

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import Multiselect from "multiselect-react-dropdown";
 
-import { urlpost, urlget } from "../Unknown/Config";
+import { turlpost, turlget } from "../Unknown/ConfigTeacher";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -11,20 +11,21 @@ import {
 } from "react-router-dom";
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
-const Addstudent = () => {
+const AddTeacher = () => {
   const [inpval, setINP] = useState({
-    StudentCode: "",
-    StudentFirstName: "",
-    StudentLastName: "",
-    StudentAge: "",
-    StudentGender: "",
-    StudentDivision: "",
-    StudentL1: "",
+    TeacherId: "",
+    TeacherEmail: "",
+    TeacherFirstName: "",
+    TeacherLastName: "",
+    TeacherAge: "",
+    TeacherGender: "",
+    TeacherDivision: "",
+    TeacherL1: "",
     DateOfJoining: "",
     LastDate: "",
     Profile: "",
-    StudentBirthdate: "",
-    StudentPhone: "",
+    TeacherBirthdate: "",
+    TeacherPhone: "",
     // Skills: [],
     // languages: [],
   });
@@ -171,7 +172,7 @@ const Addstudent = () => {
 
   // const handleApi = () => {
   //   //call the api
-  //   const url = "http://localhost:5000/Student";
+  //   const url = "http://localhost:5000/Teacher";
 
   //   const formData = new FormData();
   //   formData.append("image", file);
@@ -190,37 +191,39 @@ const Addstudent = () => {
   const addinpdata = async (e) => {
     e.preventDefault();
     const {
-      StudentCode,
-      StudentFirstName,
-      StudentLastName,
-      StudentAge,
-      StudentGender,
-      StudentDivision,
+      TeacherId,
+      TeacherEmail,
+      TeacherFirstName,
+      TeacherLastName,
+      TeacherAge,
+      TeacherGender,
+      TeacherDivision,
       DateOfJoining,
       LastDate,
       Profile,
-      StudentBirthdate,
-      StudentPhone,
+      TeacherBirthdate,
+      TeacherPhone,
     } = inpval; ////////////////////////////////////
 
     const { Skills, languages } = userinfo;
-    const res = await fetch(urlpost, {
+    const res = await fetch(turlpost, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        StudentCode,
-        StudentFirstName,
-        StudentLastName,
-        StudentAge,
-        StudentGender,
-        StudentDivision,
+        TeacherId,
+        TeacherEmail,
+        TeacherFirstName,
+        TeacherLastName,
+        TeacherAge,
+        TeacherGender,
+        TeacherDivision,
         DateOfJoining,
         LastDate,
         Profile,
-        StudentBirthdate,
-        StudentPhone,
+        TeacherBirthdate,
+        TeacherPhone,
         Skills,
         languages,
       }),
@@ -233,7 +236,7 @@ const Addstudent = () => {
       alert("fill the data");
     } else {
       alert(
-        "Student Added Successfully. Please Add the Department Details in System/Department OR Click Next "
+        "Teacher Added Successfully. Please Add the Department Details in System/Department OR Click Next "
       );
     }
   };
@@ -244,7 +247,7 @@ const Addstudent = () => {
   console.log(getuserdata);
 
   const getdata = async (e) => {
-    const res = await fetch(urlget, {
+    const res = await fetch(turlget, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -305,7 +308,7 @@ const Addstudent = () => {
           <div class="col-xl-12">
             {/* <!-- Account details card--> */}
             <div class="card mb-4">
-              <div class="card-header">Student Joining Details</div>
+              <div class="card-header">Teacher Joining Details</div>
               <br></br>
               <div class="cardprofile-body text-center">
                 {/* <!-- Profile picture image--> */}
@@ -335,25 +338,25 @@ const Addstudent = () => {
 
               <div class="card-body">
                 <form onSubmit={addinpdata}>
-                  {/* -----------------------------------------------StudentCode------------------------------------------------------- */}
+                  {/* -----------------------------------------------TeacherId------------------------------------------------------- */}
                   <div class="mb-3">
                     <label class="small mb-1" for="inputUsername">
-                      Student Code:
+                      Teacher Code:
                     </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       placeholder="Enter Salary Code:"
-                      id="ExampleInputStudentCode"
-                      value={inpval.StudentCode}
+                      id="ExampleInputTeacherId"
+                      value={inpval.TeacherId}
                       onChange={setdata}
-                      name="StudentCode"
+                      name="TeacherId"
                     />
                   </div>
-                  {/* -----------------------------------------------StudentEmail------------------------------------------------------- */}
+                  {/* -----------------------------------------------TeacherEmail------------------------------------------------------- */}
 
-                  {/* -----------------------------------------------StudentFirstName------------------------------------------------------- */}
+                  {/* -----------------------------------------------TeacherFirstName------------------------------------------------------- */}
                   <div class="row gx-3 mb-3">
                     {/* <!-- Form Group (first name)--> */}
                     <div class="col-md-6">
@@ -366,12 +369,12 @@ const Addstudent = () => {
                         className="form-control"
                         placeholder="Enter First name:"
                         id="ExampleInputFirstName"
-                        value={inpval.StudentFirstName}
+                        value={inpval.TeacherFirstName}
                         onChange={setdata}
-                        name="StudentFirstName"
+                        name="TeacherFirstName"
                       />
                     </div>
-                    {/* -----------------------------------------------StudentLastName------------------------------------------------------- */}
+                    {/* -----------------------------------------------TeacherLastName------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputLastName">
                         Last name:
@@ -382,13 +385,13 @@ const Addstudent = () => {
                         className="form-control"
                         placeholder="Enter Last name:"
                         id="ExampleInputLastName"
-                        value={inpval.StudentLastName}
+                        value={inpval.TeacherLastName}
                         onChange={setdata}
-                        name="StudentLastName"
+                        name="TeacherLastName"
                       />
                     </div>
                   </div>
-                  {/* -----------------------------------------------StudentAge------------------------------------------------------- */}
+                  {/* -----------------------------------------------TeacherAge------------------------------------------------------- */}
                   <div class="row gx-3 mb-3">
                     {/* <!-- Form Group (organization name)--> */}
                     <div class="col-md-6">
@@ -401,12 +404,12 @@ const Addstudent = () => {
                         className="form-control"
                         placeholder="Enter Age"
                         id="ExampleInputAge"
-                        value={inpval.StudentAge}
+                        value={inpval.TeacherAge}
                         onChange={setdata}
-                        name="StudentAge"
+                        name="TeacherAge"
                       />
                     </div>
-                    {/* -----------------------------------------------StudentGender------------------------------------------------------- */}
+                    {/* -----------------------------------------------TeacherGender------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputLocation">
                         Gender:
@@ -421,7 +424,7 @@ const Addstudent = () => {
                           value="male"
                           //   checked={addinpdata === "male"}
                           onChange={setdata}
-                          name="StudentGender"
+                          name="TeacherGender"
                         />{" "}
                         Male
                       </>{" "}
@@ -434,7 +437,7 @@ const Addstudent = () => {
                           value="female"
                           //   checked={addinpdata === "male"}
                           onChange={setdata}
-                          name="StudentGender"
+                          name="TeacherGender"
                         />{" "}
                         Female
                       </>{" "}
@@ -447,7 +450,7 @@ const Addstudent = () => {
                           value="Trans"
                           //   checked={addinpdata === "male"}
                           onChange={setdata}
-                          name="StudentGender"
+                          name="TeacherGender"
                         />{" "}
                         Trans
                       </>
@@ -457,9 +460,9 @@ const Addstudent = () => {
                       <select
                         required
                         class="form-control select2"
-                        value={inpval.StudentGender}
+                        value={inpval.TeacherGender}
                         onChange={setdata}
-                        name="StudentGender"
+                        name="TeacherGender"
                       >
                         <option>Select Gender----</option>
                         <option>Male</option>
@@ -470,7 +473,7 @@ const Addstudent = () => {
                   </div>
 
                   <div class="row gx-3 mb-3">
-                    {/* -----------------------------------------------StudentDepartment------------------------------------------------------- */}
+                    {/* -----------------------------------------------TeacherDepartment------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputFirstName">
                         Division Name:
@@ -479,9 +482,9 @@ const Addstudent = () => {
                         <select
                           required
                           class="form-control select2"
-                          value={inpval.StudentDivision}
+                          value={inpval.TeacherDivision}
                           onChange={setdata}
-                          name="StudentDivision"
+                          name="TeacherDivision"
                         >
                           <option>Select Division----</option>
                           <option>A</option>
@@ -493,7 +496,7 @@ const Addstudent = () => {
                           {/* {getuserdata.map((element, id) => {
                       return (
                         <>
-                          <option>{element.StudentDepartment}</option>
+                          <option>{element.TeacherDepartment}</option>
                         </>
                       );
                     })} */}
@@ -515,12 +518,12 @@ const Addstudent = () => {
                         name="DateOfJoining"
                       />
                     </div>
-                    {/* -----------------------------------------------StudentL1------------------------------------------------------- */}
+                    {/* -----------------------------------------------TeacherL1------------------------------------------------------- */}
                   </div>
                   {/* -----------------------------------------------DateOfJoining------------------------------------------------------- */}
 
                   {/* ----------------------------------------------- Till Date:------------------------------------------------------- */}
-                  {/* -----------------------------------------------StudentBirthdate------------------------------------------------------- */}
+                  {/* -----------------------------------------------TeacherBirthdate------------------------------------------------------- */}
 
                   <div class="row gx-3 mb-3">
                     <div class="col-md-6">
@@ -533,13 +536,13 @@ const Addstudent = () => {
                         className="form-control"
                         placeholder="dd/mm/yyyy"
                         id="ExampleInputL1"
-                        value={inpval.StudentBirthdate}
+                        value={inpval.TeacherBirthdate}
                         onChange={setdata}
-                        name="StudentBirthdate"
+                        name="TeacherBirthdate"
                       />
                     </div>
 
-                    {/* -----------------------------------------------StudentPhone------------------------------------------------------- */}
+                    {/* -----------------------------------------------TeacherPhone------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputBirthday">
                         Phone number:
@@ -550,9 +553,9 @@ const Addstudent = () => {
                         className="form-control"
                         placeholder="eg: +91 9876543210"
                         id="ExampleInputL1"
-                        value={inpval.StudentPhone}
+                        value={inpval.TeacherPhone}
                         onChange={setdata}
-                        name="StudentPhone"
+                        name="TeacherPhone"
                       />
                     </div>
                   </div>
@@ -761,16 +764,16 @@ const Addstudent = () => {
                     required
                     onClick={addinpdata}
                     disabled={
-                      (!inpval.StudentCode,
-                      !inpval.StudentFirstName,
-                      !inpval.StudentLastName,
-                      !inpval.StudentEmail,
-                      !inpval.StudentAge,
-                      !inpval.StudentGender,
-                      !inpval.StudentSalary,
-                      !inpval.StudentGrade,
-                      !inpval.StudentDepartment,
-                      !inpval.StudentL1,
+                      (!inpval.TeacherId,
+                      !inpval.TeacherFirstName,
+                      !inpval.TeacherLastName,
+                      !inpval.TeacherEmail,
+                      !inpval.TeacherAge,
+                      !inpval.TeacherGender,
+                      !inpval.TeacherSalary,
+                      !inpval.TeacherGrade,
+                      !inpval.TeacherDepartment,
+                      !inpval.TeacherL1,
                       !inpval.DateOfJoining)
                     }
                     // onClick={() => {
@@ -790,7 +793,7 @@ const Addstudent = () => {
                       marginLeft: 20,
                     }}
                   >
-                    <NavLink to={`/Student`}>
+                    <NavLink to={`/Teacher`}>
                       <button className="btn btn-dark ">Back</button>
                     </NavLink>
                     <NavLink to={`/deptregister`}>
@@ -798,19 +801,19 @@ const Addstudent = () => {
                         type="submit"
                         required
                         disabled={
-                          (!inpval.StudentCode,
-                          !inpval.StudentFirstName,
-                          !inpval.StudentLastName,
-                          !inpval.StudentEmail,
-                          !inpval.StudentAge,
-                          !inpval.StudentGender,
-                          !inpval.StudentSalary,
-                          !inpval.StudentGrade,
-                          !inpval.StudentDepartment,
-                          !inpval.StudentL1,
+                          (!inpval.TeacherId,
+                          !inpval.TeacherFirstName,
+                          !inpval.TeacherLastName,
+                          !inpval.TeacherEmail,
+                          !inpval.TeacherAge,
+                          !inpval.TeacherGender,
+                          !inpval.TeacherSalary,
+                          !inpval.TeacherGrade,
+                          !inpval.TeacherDepartment,
+                          !inpval.TeacherL1,
                           !inpval.DateOfJoining,
-                          !inpval.StudentBirthdate,
-                          !inpval.StudentPhone)
+                          !inpval.TeacherBirthdate,
+                          !inpval.TeacherPhone)
                         } // onClick={() => {
                         //   addinpdata();
                         // }}
@@ -837,4 +840,4 @@ const Addstudent = () => {
   );
 };
 
-export default Addstudent;
+export default AddTeacher;
