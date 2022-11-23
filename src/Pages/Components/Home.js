@@ -140,6 +140,19 @@ const Home = () => {
                   </li>
                 </ul>
               </button> */}
+                  <button type="button" class="btn btn-outline-dark btn-sm ">
+                    <a
+                      className="nav-link active"
+                      aria-current="page"
+                      href="/divstdtable"
+                      style={{ textAlign: "center" }}
+                    >
+                      <GridViewOutlinedIcon />
+                      {"   "}
+                      Div Std
+                    </a>
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
                   <button
                     class="btn btn-outline-dark btn-sm "
                     type="button"

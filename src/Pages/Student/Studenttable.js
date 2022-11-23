@@ -257,7 +257,7 @@ const Studenttable = () => {
                             onChange={handleSearch}
                           />
                         </div>
-                        StudentCode
+                        Div Std
                       </th>
 
                       <th scope="col">
@@ -286,7 +286,6 @@ const Studenttable = () => {
                       <th scope="col">Gender</th>
                       <th scope="col">Birthdate</th>
                       <th scope="col">Phone Number</th>
-                      <th scope="col">Division</th>
                       <th scope="col">DateOfJoining</th>
                       <th scope="col">LastDate</th>
 
@@ -314,29 +313,26 @@ const Studenttable = () => {
                             </td>
 
                             <td>
-                              <b>{element.StudentCode}</b>
+                              <b>{element.DivStd}</b>
                             </td>
 
                             <td>
-                              <b>{element.StudentFirstName}</b>
+                              <b>{element.FirstName}</b>
                             </td>
                             <td>
-                              <b>{element.StudentLastName}</b>
+                              <b>{element.LastName}</b>
                             </td>
                             <td>
-                              <b>{element.StudentAge}</b>
+                              <b>{element.Age}</b>
                             </td>
                             <td>
-                              <b>{element.StudentGender}</b>
+                              <b>{element.Gender}</b>
                             </td>
                             <td>
-                              <b>{element.StudentBirthdate}</b>
+                              <b>{element.DOB}</b>
                             </td>
                             <td>
-                              <b>{element.StudentPhone}</b>
-                            </td>
-                            <td>
-                              <b>{element.StudentDivision}</b>
+                              <b>{element.Phone}</b>
                             </td>
                             <td>
                               <b>{element.DateOfJoining}</b>

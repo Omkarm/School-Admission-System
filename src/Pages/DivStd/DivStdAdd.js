@@ -333,23 +333,6 @@ const DivStdAdd = () => {
               <div class="card-body">
                 <form onSubmit={addinpdata}>
                   {/* -----------------------------------------------DivStd------------------------------------------------------- */}
-                  <div class="mb-3">
-                    <label class="small mb-1" for="inputUsername">
-                      Division and Std:
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      placeholder="eg: 10 A"
-                      id="ExampleInputDivStd"
-                      value={inpval.DivStd}
-                      onChange={setdata}
-                      name="DivStd"
-                    />
-                    Enter Your Standard and Division as shown in example.
-                  </div>
-
                   <div class="row gx-3 mb-3">
                     {/* <!-- Form Group (first name)--> */}
                     <div class="col-md-6">
@@ -548,8 +531,6 @@ const DivStdAdd = () => {
                     </div>
                   </div>
                   <br></br>
-
-                  <div class="card-header">Skills</div>
 
                   {/* -----------------------------------------------submit------------------------------------------------------- */}
 
