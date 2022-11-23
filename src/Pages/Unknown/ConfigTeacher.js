@@ -24,6 +24,8 @@ let urlgetdeptid =
 let urldupdate =
   "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/teacherent";
 
+//
+
 module.exports = {
   turlpost,
   turlget,
