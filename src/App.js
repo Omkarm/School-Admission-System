@@ -55,6 +55,9 @@ import Teachertable from "./Pages/Teacher/Teachertable";
 import Addsupportstaff from "./Pages/Support Staff/Addsupportstaff";
 import Supportstafftable from "./Pages/Support Staff/Supportstafftable";
 
+import DivStdAdd from "./Pages/DivStd/DivStdAdd";
+import DivStdTable from "./Pages/DivStd/DivStdTable";
+
 function App() {
   return (
     <div className="Main">
@@ -65,6 +68,17 @@ function App() {
         {/* <Account /> */}
         <Routes>
           <Route path="/main" element={[<Main></Main>, <Home></Home>]} />
+
+          <Route
+            path="/divstdadd"
+            element={[<Navbar></Navbar>, <DivStdAdd></DivStdAdd>]}
+          />
+
+          <Route
+            path="/divstdtable"
+            element={[<Navbar></Navbar>, <DivStdTable></DivStdTable>]}
+          />
+
           <Route
             path="/admission"
             element={[<Studenttable></Studenttable>, <Home></Home>]}

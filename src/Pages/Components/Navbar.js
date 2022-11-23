@@ -42,7 +42,7 @@ const Navbar = () => {
                 <a
                   className="nav-link active "
                   aria-current="page"
-                  href="/admission"
+                  href="/divstdtable"
                 >
                   Admission
                 </a>
