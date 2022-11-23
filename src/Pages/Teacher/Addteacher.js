@@ -220,8 +220,6 @@ const AddTeacher = () => {
         TeacherProfile,
         TeacherBirthdate,
         TeacherPhone,
-        TeacherSkills,
-        Teacherlanguages,
       }),
     });
 
