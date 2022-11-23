@@ -5,7 +5,7 @@ import "jspdf-autotable";
 
 import { Button, Popover, OverlayTrigger } from "react-bootstrap";
 
-import { urlget, urldget, urldelete } from "../Unknown/Config";
+import { divstdurlget, urldget, urldelete } from "../Unknown/ConfigDivStd";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -19,7 +19,7 @@ const DivStdTable = () => {
   console.log(getuserdata);
 
   const getdata = async (e) => {
-    const res = await fetch(urlget, {
+    const res = await fetch(divstdurlget, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import Multiselect from "multiselect-react-dropdown";
 
-import { urlpost, urlget } from "../Unknown/Config";
+import { divstdurlpost, divstdurlget } from "../Unknown/ConfigDivStd";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -203,7 +203,7 @@ const DivStdAdd = () => {
     } = inpval; ////////////////////////////////////
 
     const { Skills, languGeographyTeachers } = userinfo;
-    const res = await fetch(urlpost, {
+    const res = await fetch(divstdurlpost, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -220,7 +220,6 @@ const DivStdAdd = () => {
         HindiTeacher,
         EnglishTeacher,
         Skills,
-        languages,
       }),
     });
 
@@ -242,7 +241,7 @@ const DivStdAdd = () => {
   console.log(getuserdata);
 
   const getdata = async (e) => {
-    const res = await fetch(urlget, {
+    const res = await fetch(divstdurlget, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

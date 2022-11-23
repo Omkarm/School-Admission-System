@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import Multiselect from "multiselect-react-dropdown";
 
-import { turlpost, turlget } from "../Unknown/ConfigT";
+import { turlpost, turlget } from "../Unknown/ConfigTeacher";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
