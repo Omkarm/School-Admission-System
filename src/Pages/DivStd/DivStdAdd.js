@@ -335,19 +335,57 @@ const DivStdAdd = () => {
                   {/* -----------------------------------------------DivStd------------------------------------------------------- */}
                   <div class="mb-3">
                     <label class="small mb-1" for="inputUsername">
-                      Student Code:
+                      Division and Std:
                     </label>
                     <input
                       type="text"
                       required
                       className="form-control"
-                      placeholder="Enter Salary Code:"
+                      placeholder="eg: 10 A"
                       id="ExampleInputDivStd"
                       value={inpval.DivStd}
                       onChange={setdata}
                       name="DivStd"
                     />
+                    Enter Your Standard and Division as shown in example.
                   </div>
+
+                  <div class="row gx-3 mb-3">
+                    {/* <!-- Form Group (first name)--> */}
+                    <div class="col-md-6">
+                      <label class="small mb-1" for="inputEnglishTeacher">
+                        Division and Std:
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        placeholder="eg: 10 A"
+                        id="ExampleInputDivStd"
+                        value={inpval.DivStd}
+                        onChange={setdata}
+                        name="DivStd"
+                      />
+                      Enter Your Standard and Division as shown in example.
+                    </div>
+                    {/* -----------------------------------------------MathsTeacher------------------------------------------------------- */}
+                    <div class="col-md-6">
+                      <label class="small mb-1" for="inputMathsTeacher">
+                        Drawing Teacher:
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        placeholder="Enter Drawing Teacher Name:"
+                        id="ExampleInputDrawingTeacher"
+                        value={inpval.DrawingTeacher}
+                        onChange={setdata}
+                        name="DrawingTeacher"
+                      />
+                    </div>
+                  </div>
+
                   {/* -----------------------------------------------StudentEmail------------------------------------------------------- */}
 
                   {/* -----------------------------------------------ClassTeacher------------------------------------------------------- */}
@@ -355,7 +393,7 @@ const DivStdAdd = () => {
                     {/* <!-- Form Group (first name)--> */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputEnglishTeacher">
-                        First name:
+                        Class Teacher:
                       </label>
                       <input
                         type="text"
@@ -371,17 +409,17 @@ const DivStdAdd = () => {
                     {/* -----------------------------------------------MathsTeacher------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputMathsTeacher">
-                        Last name:
+                        English Teacher:
                       </label>
                       <input
                         type="text"
                         required
                         className="form-control"
-                        placeholder="Enter Last name:"
-                        id="ExampleInputMathsTeacher"
-                        value={inpval.MathsTeacher}
+                        placeholder="Enter English Teacher Name:"
+                        id="ExampleInputEnglishTeacher"
+                        value={inpval.EnglishTeacher}
                         onChange={setdata}
-                        name="MathsTeacher"
+                        name="EnglishTeacher"
                       />
                     </div>
                   </div>
@@ -390,10 +428,10 @@ const DivStdAdd = () => {
                     {/* <!-- Form Group (organization name)--> */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputOrgName">
-                        GeographyTeacher:
+                        Geography Teacher:
                       </label>
                       <input
-                        type="number"
+                        type="text"
                         required
                         className="form-control"
                         placeholder="Enter GeographyTeacher"
@@ -406,48 +444,18 @@ const DivStdAdd = () => {
                     {/* -----------------------------------------------HistoryTeacher------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputLocation">
-                        HistoryTeacher:
+                        History Teacher:
                       </label>
-                      <br></br>
-                      <>
-                        <input
-                          type="radio"
-                          required
-                          className="radio"
-                          id="ExampleInputHistoryTeacher"
-                          value="male"
-                          //   checked={addinpdata === "male"}
-                          onChange={setdata}
-                          name="HistoryTeacher"
-                        />{" "}
-                        Male
-                      </>{" "}
-                      <>
-                        <input
-                          type="radio"
-                          required
-                          className="radio"
-                          id="ExampleInputGeographyTeacher"
-                          value="female"
-                          //   checked={addinpdata === "male"}
-                          onChange={setdata}
-                          name="HistoryTeacher"
-                        />{" "}
-                        Female
-                      </>{" "}
-                      <>
-                        <input
-                          type="radio"
-                          required
-                          className="radio"
-                          id="ExampleInputGeographyTeacher"
-                          value="Trans"
-                          //   checked={addinpdata === "male"}
-                          onChange={setdata}
-                          name="HistoryTeacher"
-                        />{" "}
-                        Trans
-                      </>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        placeholder="Enter HistoryTeacher"
+                        id="ExampleInputHistoryTeacher"
+                        value={inpval.HistoryTeacher}
+                        onChange={setdata}
+                        name="HistoryTeacher"
+                      />
                     </div>
 
                     {/* <form class="col-md-12">
@@ -470,43 +478,29 @@ const DivStdAdd = () => {
                     {/* -----------------------------------------------StudentDepartment------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputEnglishTeacher">
-                        Division Name:
+                        Maths Teacher:
                       </label>
-                      <form class="col-md-12">
-                        <select
-                          required
-                          class="form-control select2"
-                          value={inpval.StudentDivision}
-                          onChange={setdata}
-                          name="StudentDivision"
-                        >
-                          <option>Select Division----</option>
-                          <option>A</option>
-                          <option>B</option>
-                          <option>c</option>
-                          <option>D</option>
-                          <option>E</option>
-
-                          {/* {getuserdata.map((element, id) => {
-                      return (
-                        <>
-                          <option>{element.StudentDepartment}</option>
-                        </>
-                      );
-                    })} */}
-                        </select>
-                      </form>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        placeholder="Enter Maths Teacher Name: "
+                        id="ExampleInputHistoryTeacher"
+                        value={inpval.MathsTeacher}
+                        onChange={setdata}
+                        name="MathsTeacher"
+                      />
                     </div>
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputEmailAddress">
-                        Date Of Joining:
+                        Science Teacher:
                       </label>
                       <input
-                        type="date"
+                        type="text"
                         required
                         className="form-control"
-                        placeholder="dd/mm/yyyy"
-                        id="ExampleInputL1"
+                        placeholder="Enter Science Teacher Name: "
+                        id="ExampleInputScienceTeacher"
                         value={inpval.ScienceTeacher}
                         onChange={setdata}
                         name="ScienceTeacher"
@@ -522,232 +516,41 @@ const DivStdAdd = () => {
                   <div class="row gx-3 mb-3">
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputEnglishTeacher">
-                        Birth Date:
+                        Marathi Teacher:
                       </label>
                       <input
-                        type="date"
+                        type="text"
                         required
                         className="form-control"
-                        placeholder="dd/mm/yyyy"
-                        id="ExampleInputL1"
-                        value={inpval.HindiTeacher}
+                        placeholder="Enter Marathi Teacher Name: "
+                        id="ExampleInputScienceTeacher"
+                        value={inpval.MarathiTeacher}
                         onChange={setdata}
-                        name="HindiTeacher"
+                        name="MarathiTeacher"
                       />
                     </div>
 
                     {/* -----------------------------------------------EnglishTeacher------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputBirthday">
-                        EnglishTeacher number:
+                        Hindi Teacher:
                       </label>
                       <input
-                        type="number"
+                        type="text"
                         required
                         className="form-control"
-                        placeholder="eg: +91 9876543210"
-                        id="ExampleInputL1"
-                        value={inpval.EnglishTeacher}
+                        placeholder="Enter Hindi Teacher Name: "
+                        id="ExampleInputHindiTeacher"
+                        value={inpval.HindiTeacher}
                         onChange={setdata}
-                        name="EnglishTeacher"
+                        name="HindiTeacher"
                       />
                     </div>
                   </div>
                   <br></br>
 
                   <div class="card-header">Skills</div>
-                  <div class="cardskills-body text-center">
-                    {/* <!-- MarathiTeacher picture imGeographyTeacher--> */}
-                    {/* <Multiselect
-                  isObject={false}
-                  onKeyPressFn={function noRefCheck() {}}
-                  onRemove={function noRefCheck() {}}
-                  onSearch={function noRefCheck() {}}
-                  onSelect={function noRefCheck() {}}
-                  options={["Html", "Css", "Java", "React Js", "Node Js"]}
-                /> */}
 
-                    <form>
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languGeographyTeachers"
-                              value="Javascript"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Javascript
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languGeographyTeachers"
-                              value="Python"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Python
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languGeographyTeachers"
-                              value="Java"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Java
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languGeographyTeachers"
-                              value="Node"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Node
-                            </label>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languGeographyTeachers"
-                              value="C#"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              C#
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languGeographyTeachers"
-                              value="C++"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              C++
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="Skills"
-                              value="C"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              C
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="Skills"
-                              value="React"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              React
-                            </label>
-                          </div>
-                        </div>
-                        {/* <div class="md-12">
-                      <label class="small mb-1" for="inputSkills">
-                        Other:{" "}
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Skills"
-                        id="ExampleInputSalary"
-                        value={userinfo.Skills}
-                        onChange={handleChange}
-                        name="Skills"
-                      />
-                    </div> */}
-                      </div>
-                      {/* <div class="md-6">
-                    <label class="small mb-1" for="inputMathsTeacher">
-                      Other Skills:
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      placeholder="Enter L+1"
-                      id="ExampleInputL1"
-                      value={userinfo.Skills}
-                      onChange={handleChange}
-                      name="Skills"
-                    />
-                  </div> */}
-
-                      <div className="form-floating mt-3 mb-3 text-center">
-                        <label htmlFor="exampleFormControlTextarea1">
-                          {/* languGeographyTeachers :{" "} */}
-                        </label>
-                        <textarea
-                          className="form-control text"
-                          name="response"
-                          value={userinfo.Skills}
-                          placeholder="The checkbox values will be displayed here "
-                          id="floatingTextarea2"
-                          style={{ height: "150px" }}
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-                    </form>
-                  </div>
                   {/* -----------------------------------------------submit------------------------------------------------------- */}
 
                   {/* <!-- Save changes button--> */}
