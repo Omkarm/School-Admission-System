@@ -149,7 +149,7 @@ const Home = () => {
                     >
                       <GridViewOutlinedIcon />
                       {"   "}
-                      Div Std
+                      Teacher Allocation
                     </a>
                   </button>
                   &nbsp;&nbsp;&nbsp;

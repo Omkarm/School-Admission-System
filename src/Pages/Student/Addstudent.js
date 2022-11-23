@@ -334,18 +334,20 @@ const Addstudent = () => {
                   {/* -----------------------------------------------DivStd------------------------------------------------------- */}
                   <div class="mb-3">
                     <label class="small mb-1" for="inputUsername">
-                      Student Code:
+                      Division and Std:
                     </label>
                     <input
                       type="text"
                       required
                       className="form-control"
-                      placeholder="Enter Salary Code:"
+                      placeholder="eg: 10-A"
                       id="ExampleInputDivStd"
                       value={inpval.DivStd}
                       onChange={setdata}
                       name="DivStd"
                     />
+                    Enter Your Standard and Division as shown in example.(IN
+                    BLOCK LETTERS)
                   </div>
                   {/* -----------------------------------------------StudentEmail------------------------------------------------------- */}
 

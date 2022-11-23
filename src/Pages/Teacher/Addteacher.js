@@ -14,17 +14,16 @@ import {
 const AddTeacher = () => {
   const [inpval, setINP] = useState({
     TeacherId: "",
-    Email: "",
-    FirstName: "",
-    LastName: "",
-    Age: "",
-    Gender: "",
-    Division: "",
+    TeacherEmail: "",
+    TeacherFirstName: "",
+    TeacherLastName: "",
+    TeacherAge: "",
+    TeacherGender: "",
     DateOfJoining: "",
     LastDate: "",
     Profile: "",
-    Birthdate: "",
-    Phone: "",
+    TeacherBirthdate: "",
+    TeacherPhone: "",
     // Skills: [],
     // languages: [],
   });
@@ -190,18 +189,17 @@ const AddTeacher = () => {
   const addinpdata = async (e) => {
     e.preventDefault();
     const {
-      Id,
-      Email,
-      FirstName,
-      LastName,
-      Age,
-      Gender,
-      Division,
-      DateOfJoining,
-      LastDate,
-      Profile,
-      Birthdate,
-      Phone,
+      TeacherId,
+      TeacherEmail,
+      TeacherFirstName,
+      TeacherLastName,
+      TeacherAge,
+      TeacherGender,
+      TeacherDateOfJoining,
+      TeacherLastDate,
+      TeacherProfile,
+      TeacherBirthdate,
+      TeacherPhone,
     } = inpval; ////////////////////////////////////
 
     const { Skills, languages } = userinfo;
@@ -211,20 +209,19 @@ const AddTeacher = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        Id,
-        Email,
-        FirstName,
-        LastName,
-        Age,
-        Gender,
-        Division,
-        DateOfJoining,
-        LastDate,
-        Profile,
-        Birthdate,
-        Phone,
-        Skills,
-        languages,
+        TeacherId,
+        TeacherEmail,
+        TeacherFirstName,
+        TeacherLastName,
+        TeacherAge,
+        TeacherGender,
+        TeacherDateOfJoining,
+        TeacherLastDate,
+        TeacherProfile,
+        TeacherBirthdate,
+        TeacherPhone,
+        TeacherSkills,
+        Teacherlanguages,
       }),
     });
 
@@ -353,6 +350,7 @@ const AddTeacher = () => {
                       name="TeacherId"
                     />
                   </div>
+
                   {/* -----------------------------------------------TeacherEmail------------------------------------------------------- */}
 
                   {/* -----------------------------------------------TeacherFirstName------------------------------------------------------- */}
@@ -474,34 +472,21 @@ const AddTeacher = () => {
                   <div class="row gx-3 mb-3">
                     {/* -----------------------------------------------TeacherDepartment------------------------------------------------------- */}
                     <div class="col-md-6">
-                      <label class="small mb-1" for="inputFirstName">
-                        Division Name:
+                      <label class="small mb-1" for="inputEmailAddress">
+                        Teacher Email:
                       </label>
-                      <form class="col-md-12">
-                        <select
-                          required
-                          class="form-control select2"
-                          value={inpval.TeacherDivision}
-                          onChange={setdata}
-                          name="TeacherDivision"
-                        >
-                          <option>Select Division----</option>
-                          <option>A</option>
-                          <option>B</option>
-                          <option>c</option>
-                          <option>D</option>
-                          <option>E</option>
-
-                          {/* {getuserdata.map((element, id) => {
-                      return (
-                        <>
-                          <option>{element.TeacherDepartment}</option>
-                        </>
-                      );
-                    })} */}
-                        </select>
-                      </form>
+                      <input
+                        type="text"
+                        required
+                        className="form-control"
+                        placeholder="Enter Email:"
+                        id="ExampleInputTeacherEmail"
+                        value={inpval.TeacherEmail}
+                        onChange={setdata}
+                        name="TeacherEmail"
+                      />
                     </div>
+
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputEmailAddress">
                         Date Of Joining:

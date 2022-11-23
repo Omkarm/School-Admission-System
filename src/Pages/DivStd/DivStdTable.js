@@ -95,7 +95,7 @@ const DivStdTable = () => {
     console.log(getuserdata);
 
     allresult = getuserdata.filter((item) =>
-      item.StudentCode.toLowerCase()
+      item.DivStd.toLowerCase()
         .toLowerCase()
         .includes(searchtextall.toLowerCase())
     );
@@ -232,7 +232,7 @@ const DivStdTable = () => {
               <div className="add_btn">
                 <div className="addbuttons">
                   <NavLink to="/divstdadd" className="btn btn-primary btn-sm ">
-                    Add DivStd +
+                    Allocate Teacher +
                   </NavLink>{" "}
                   <CSVLink
                     data={getuserdata}

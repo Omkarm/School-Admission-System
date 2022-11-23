@@ -18,7 +18,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // import "mdbreact/dist/css/mdb.css";
 // dqaaaaasaa
 
-import Navbar from "./Pages/Components/Navbar";
+// import Navbar from "./Pages/Components/Navbar";
 // import Footer from "./Pages/Components/Footer";
 // import Login from "./Pages/Login/Login";
 // import Signup from "./Pages/Login/signup";
@@ -71,12 +71,12 @@ function App() {
 
           <Route
             path="/divstdadd"
-            element={[<Navbar></Navbar>, <DivStdAdd></DivStdAdd>]}
+            element={[<DivStdAdd></DivStdAdd>, <Home></Home>]}
           />
 
           <Route
             path="/divstdtable"
-            element={[<Navbar></Navbar>, <DivStdTable></DivStdTable>]}
+            element={[<DivStdTable></DivStdTable>, <Home></Home>]}
           />
 
           <Route
@@ -86,7 +86,7 @@ function App() {
 
           <Route
             path="/addstudent"
-            element={[<Navbar></Navbar>, <Addstudent></Addstudent>]}
+            element={[<Addstudent></Addstudent>, <Home></Home>]}
           />
 
           <Route
@@ -96,20 +96,17 @@ function App() {
 
           <Route
             path="/addteacher"
-            element={[<Navbar></Navbar>, <Addteacher></Addteacher>]}
+            element={[<Addteacher></Addteacher>, <Home></Home>]}
           />
 
           <Route
             path="/supportstaff"
-            element={[
-              <Navbar></Navbar>,
-              <Supportstafftable></Supportstafftable>,
-            ]}
+            element={[<Supportstafftable></Supportstafftable>, <Home></Home>]}
           />
 
           <Route
             path="/addsupportstaff"
-            element={[<Navbar></Navbar>, <Addsupportstaff></Addsupportstaff>]}
+            element={[<Addsupportstaff></Addsupportstaff>, <Home></Home>]}
           />
           {/* <Route path="/login" element={<Login></Login>} />
 

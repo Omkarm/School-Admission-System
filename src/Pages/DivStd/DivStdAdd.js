@@ -343,13 +343,14 @@ const DivStdAdd = () => {
                         type="text"
                         required
                         className="form-control"
-                        placeholder="eg: 10 A"
+                        placeholder="eg: 10-A"
                         id="ExampleInputDivStd"
                         value={inpval.DivStd}
                         onChange={setdata}
                         name="DivStd"
                       />
-                      Enter Your Standard and Division as shown in example.
+                      Enter Your Standard and Division as shown in example.(IN
+                      BLOCK LETTERS){" "}
                     </div>
                     {/* -----------------------------------------------MathsTeacher------------------------------------------------------- */}
                     <div class="col-md-6">
