@@ -115,7 +115,7 @@ const Teachertable = () => {
     console.log(getuserdata);
 
     filteredresult = getuserdata.filter((item) =>
-      item.TeacherId.toLowerCase().includes(searchtext.toLowerCase())
+      item.TeacherFirstName.toLowerCase().includes(searchtext.toLowerCase())
     );
 
     setUserdata(filteredresult);

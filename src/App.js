@@ -41,7 +41,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // import EmpEdit from "./Pages/Employee/EmpEdit";
 // import Acount from "./Pages/Components/Account";
 // import Account from "./Pages/Components/Account";
-// import Dashboard from "./Pages/Components/Dashboard";
+import Dashboard from "./Pages/Components/Dashboard";
 
 import Studenttable from "./Pages/Student/Studenttable";
 import Addstudent from "./Pages/Student/Addstudent";
@@ -108,6 +108,12 @@ function App() {
             path="/addsupportstaff"
             element={[<Addsupportstaff></Addsupportstaff>, <Home></Home>]}
           />
+
+          <Route
+            path="/dashboard"
+            element={[<Dashboard></Dashboard>, <Home></Home>]}
+          />
+
           {/* <Route path="/login" element={<Login></Login>} />
 
           <Route path="/signup" element={<Signup></Signup>} /> */}

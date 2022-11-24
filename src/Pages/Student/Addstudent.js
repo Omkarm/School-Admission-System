@@ -108,7 +108,7 @@ const Addstudent = () => {
 
   const [file, setFile] = useState();
 
-  const url = "http://localhost:5000/getimg";
+  const url = "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/getimg";
 
   const filechangeHandler = (e) => {
     setFile(e.target.files[0]);
@@ -133,7 +133,7 @@ const Addstudent = () => {
 
     data.append("image", file);
 
-    fetch("http://localhost:5000/postimg", {
+    fetch("https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/postimg", {
       method: "POST",
       body: data,
     })
