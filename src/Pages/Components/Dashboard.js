@@ -19,16 +19,58 @@ const Dashboard = () => {
       <div className="splitr right">
         <div className="background">
           <h3>Dashboard</h3>
-          <br></br>
-          <div class="grid-container">
-            <div class="grid-item">
-              <div className="content">
-                <div className="title">
-                  <h5>Total Students</h5>
+        </div>
+        <br></br>
+        <div class="grid-container">
+          {/* ///////////////////////////////////////////////////////////////////////////// */}
+
+          <div class="grid-item">
+            <div className="content">
+              <div className="title">
+                <h5>Total Students</h5>
+              </div>
+              <div className="count">
+                <div className="numbers">
+                  <h5 style={{ color: "green", fontSize: "35px" }}>50</h5>
                 </div>
+                {/* <div class="progress" style={{ height: "25px" }}>
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      style={{ width: "50%", height: "25px" }}
+                      aria-valuenow="50"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      50%
+                    </div>
+                  </div> */}
+              </div>
+              <div className="empbtn">
+                <button type="button" class="btn btn-outline-primary">
+                  <a
+                    className="nav-link active"
+                    aria-current="page"
+                    href="/admission"
+                    style={{ textAlign: "center" }}
+                  >
+                    {"   "}
+                    view
+                  </a>
+                </button>{" "}
+              </div>
+            </div>
+          </div>
+          {/* ///////////////////////////////////////////////////////////////////////////// */}
+
+          <div class="grid-item">
+            <div className="content">
+              <div className="title">
+                <h5>Total Teachers</h5>
                 <div className="count">
                   <div className="numbers">
-                    <h5 style={{ color: "green", fontSize: "35px" }}>50</h5>
+                    <h5 style={{ color: "green", fontSize: "35px" }}>30</h5>
                   </div>
                   {/* <div class="progress" style={{ height: "25px" }}>
                     <div
@@ -49,7 +91,7 @@ const Dashboard = () => {
                     <a
                       className="nav-link active"
                       aria-current="page"
-                      href="/employee"
+                      href="/teachertable"
                       style={{ textAlign: "center" }}
                     >
                       {"   "}
@@ -59,16 +101,18 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-
-            <div class="grid-item">
-              <div className="content">
-                <div className="title">
-                  <h5>Total Teachers</h5>
-                  <div className="count">
-                    <div className="numbers">
-                      <h5 style={{ color: "green", fontSize: "35px" }}>30</h5>
-                    </div>
-                    {/* <div class="progress" style={{ height: "25px" }}>
+          </div>
+          {/* ///////////////////////////////////////////////////////////////////////////// */}
+          <div class="grid-item">
+            <div className="content">
+              <div className="title">
+                <h5>Total Staff</h5>
+              </div>
+              <div className="count">
+                <div className="numbers">
+                  <h5 style={{ color: "green", fontSize: "35px" }}>10</h5>
+                </div>
+                {/* <div class="progress" style={{ height: "25px" }}>
                     <div
                       class="progress-bar"
                       role="progressbar"
@@ -81,31 +125,33 @@ const Dashboard = () => {
                       50%
                     </div>
                   </div> */}
-                  </div>
-                  <div className="empbtn">
-                    <button type="button" class="btn btn-outline-primary">
-                      <a
-                        className="nav-link active"
-                        aria-current="page"
-                        href="/employee"
-                        style={{ textAlign: "center" }}
-                      >
-                        {"   "}
-                        view
-                      </a>
-                    </button>{" "}
-                  </div>
-                </div>
+              </div>
+              <div className="empbtn">
+                <button type="button" class="btn btn-outline-primary">
+                  <a
+                    className="nav-link active"
+                    aria-current="page"
+                    href="/supportstaff"
+                    style={{ textAlign: "center" }}
+                  >
+                    {"   "}
+                    view
+                  </a>
+                </button>{" "}
               </div>
             </div>
-            <div class="grid-item">
-              <div className="content">
-                <div className="title">
-                  <h5>Total Staff</h5>
-                </div>
+          </div>
+        </div>
+        {/* ///////////////////////////////////////////////////////////////////////////// */}
+
+        <div class="grid-container">
+          <div class="grid-item">
+            <div className="content">
+              <div className="title">
+                <h5>title</h5>
                 <div className="count">
                   <div className="numbers">
-                    <h5 style={{ color: "green", fontSize: "35px" }}>10</h5>
+                    <h5 style={{ color: "green", fontSize: "35px" }}>count</h5>
                   </div>
                   {/* <div class="progress" style={{ height: "25px" }}>
                     <div
@@ -126,7 +172,7 @@ const Dashboard = () => {
                     <a
                       className="nav-link active"
                       aria-current="page"
-                      href="/employee"
+                      href="/teachertable"
                       style={{ textAlign: "center" }}
                     >
                       {"   "}
@@ -136,17 +182,48 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="grid-container">
-            <div class="grid-item">2</div>
-          </div>
-          <div class="grid-container">
-            <div class="grid-item">3</div>
-          </div>
-
-          <div className="row">
-            <div className="col">asfafffa</div>
-          </div>
+          </div>{" "}
+          <div class="grid-item">
+            <div className="content">
+              <div className="title">
+                <h5>Title</h5>
+                <div className="count">
+                  <div className="numbers">
+                    <h5 style={{ color: "green", fontSize: "35px" }}>count</h5>
+                  </div>
+                  {/* <div class="progress" style={{ height: "25px" }}>
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      style={{ width: "50%", height: "25px" }}
+                      aria-valuenow="50"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      50%
+                    </div>
+                  </div> */}
+                </div>
+                <div className="empbtn">
+                  <button type="button" class="btn btn-outline-primary">
+                    <a
+                      className="nav-link active"
+                      aria-current="page"
+                      href="/teachertable"
+                      style={{ textAlign: "center" }}
+                    >
+                      {"   "}
+                      view
+                    </a>
+                  </button>{" "}
+                </div>
+              </div>
+            </div>
+          </div>{" "}
+        </div>
+        <div class="grid-container">
+          <div class="grid-item">3</div>
         </div>
       </div>
 

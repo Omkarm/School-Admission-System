@@ -1,5 +1,7 @@
 
-
+.main{
+    background-color: white;
+}
 .card-body {
     height: 12cm00px;
     /* background-color: rgb(198, 10, 10); */
@@ -48,11 +50,29 @@
     border-radius: 25px;
     border: 1px solid #d3d3d3;}
 
+.grid-item1{
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            font-size: 30px;
+            text-align: center;
+            padding-top: 20px;
+            box-shadow: rgb(0 0 0 / 15%) 1px 1px 10px;
+            border-radius: 25px;
+            border: 1px solid #d3d3d3;
+        }
+
 
        
+.nopage{
+    text-align: center;
+    padding-right: 100px;
+    padding-top: 100px;
+    text-decoration: underline;
+}
 
-
-
+.background{
+    padding-left: 10px;
+    
+}
 /* .card1 {
     width: 500px;
     height: 150px;

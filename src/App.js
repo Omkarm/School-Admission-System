@@ -20,7 +20,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // import Navbar from "./Pages/Components/Navbar";
 // import Footer from "./Pages/Components/Footer";
-// import Login from "./Pages/Login/Login";
+import Login from "./Pages/Login/Login";
 // import Signup from "./Pages/Login/signup";
 // import Home from "./Pages/Components/Home";
 // import About from "./Pages/Unknown/About";
@@ -40,7 +40,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // import EmpRegister from "./Pages/Employee/EmpRegister";
 // import EmpEdit from "./Pages/Employee/EmpEdit";
 // import Acount from "./Pages/Components/Account";
-// import Account from "./Pages/Components/Account";
+import Account from "./Pages/Components/Account";
 import Dashboard from "./Pages/Components/Dashboard";
 
 import Studenttable from "./Pages/Student/Studenttable";
@@ -58,12 +58,13 @@ import Supportstafftable from "./Pages/Support Staff/Supportstafftable";
 import DivStdAdd from "./Pages/DivStd/DivStdAdd";
 import DivStdTable from "./Pages/DivStd/DivStdTable";
 
+import NoPageFound from "./Pages/Unknown/NoPageFound";
+
 function App() {
   return (
     <div className="Main">
-      {/* <Home /> */}
       {/* <Navbar1 /> */}
-
+      <Login />
       <BrowserRouter>
         {/* <Account /> */}
         <Routes>
@@ -76,42 +77,63 @@ function App() {
 
           <Route
             path="/divstdtable"
-            element={[<DivStdTable></DivStdTable>, <Home></Home>]}
+            element={[<DivStdTable></DivStdTable>, <Home></Home>, <Account />]}
           />
 
           <Route
             path="/admission"
-            element={[<Studenttable></Studenttable>, <Home></Home>]}
+            element={[
+              <Studenttable></Studenttable>,
+              <Home></Home>,
+              <Account />,
+            ]}
           />
 
           <Route
             path="/addstudent"
-            element={[<Addstudent></Addstudent>, <Home></Home>]}
+            element={[<Addstudent></Addstudent>, <Home></Home>, <Account />]}
           />
 
           <Route
             path="/teachertable"
-            element={[<Teachertable></Teachertable>, <Home></Home>]}
+            element={[
+              <Teachertable></Teachertable>,
+              <Home></Home>,
+              <Account />,
+            ]}
           />
 
           <Route
             path="/addteacher"
-            element={[<Addteacher></Addteacher>, <Home></Home>]}
+            element={[<Addteacher></Addteacher>, <Home></Home>, <Account />]}
           />
 
           <Route
             path="/supportstaff"
-            element={[<Supportstafftable></Supportstafftable>, <Home></Home>]}
+            element={[
+              <Supportstafftable></Supportstafftable>,
+              <Home></Home>,
+              <Account />,
+            ]}
           />
 
           <Route
             path="/addsupportstaff"
-            element={[<Addsupportstaff></Addsupportstaff>, <Home></Home>]}
+            element={[
+              <Addsupportstaff></Addsupportstaff>,
+              <Home></Home>,
+              <Account />,
+            ]}
           />
 
           <Route
             path="/dashboard"
-            element={[<Dashboard></Dashboard>, <Home></Home>]}
+            element={[<Dashboard></Dashboard>, <Home></Home>, <Account />]}
+          />
+
+          <Route
+            path="/principle"
+            element={[<NoPageFound></NoPageFound>, <Home></Home>, <Account />]}
           />
 
           {/* <Route path="/login" element={<Login></Login>} />

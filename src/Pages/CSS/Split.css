@@ -1,13 +1,13 @@
 .imgalign{
     background-color: white;
     text-align: center;
-    padding-top: 10px;
+    
 }
 .imgalignfooter {
     background-color: white;
     text-align: left;
     padding-top: 10px;
-    padding-left: 100px;
+     padding-left: 100px;
 }
 
 .footer{padding-top: 15px;
@@ -16,13 +16,21 @@
 
 .github{
 padding-left: 0px;
-
 }
+
+.text{
+    padding-left: 12px;
+}
+
+.blank{
+    padding-left: 150px;
+}
+
 .split {
     height: 100%;
     width: 8%;
     position: fixed;
-    z-index: 2;
+    z-index: 4;
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
@@ -41,15 +49,15 @@ padding-left: 0px;
     padding-right: 20px;
 }
 
-/* .splittop {
+.splittop {
     height: 15%;
     width: 100%;
     position: absolute;
     top: 0;
     overflow-x: hidden;
     padding-top: 10px;
-    left: 120px;
-} */
+    
+}
 .splittop1 {
     height: 50%;
     width: 100%;

@@ -16,9 +16,6 @@ const Account = () => {
       </div>
       <div className="splittop1 top">
         <div class="d-flex justify-content-end">
-          <div className="text">
-            <h4>Omkar More</h4>
-          </div>
           <div className="nav-item dropdown">
             <a
               className="nav-link active dropdown-toggle"
@@ -28,6 +25,9 @@ const Account = () => {
               <AccountCircleRoundedIcon fontSize="large" />
             </a>
             <ul className="dropdown-menu dropbox">
+              <div className="text">
+                <h5>Omkar More</h5>
+              </div>
               <li>
                 <a className="dropdown-item" href="/account">
                   Account

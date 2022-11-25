@@ -9,6 +9,10 @@ const Login = () => {
       <div className="Auth-form-container">
         <form className="Auth-form">
           <div className="Auth-form-content">
+            <h3 className="Auth-form-title">
+              Just Click on Submit button for now
+            </h3>
+
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="form-group mt-3">
               <label>Email address</label>
@@ -45,6 +49,7 @@ const Login = () => {
                 <div className="signup">
                   Create Account <a href="signup">Sign up</a>
                 </div>
+                <br></br>
               </p>
             </div>
           </div>
