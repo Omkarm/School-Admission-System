@@ -75,7 +75,7 @@ function App() {
           <Route path="/main" element={[<Main></Main>, <Home></Home>]} />
           <Route
             path="/divstdadd"
-            element={[<DivStdAdd></DivStdAdd>, <Home></Home>]}
+            element={[<DivStdAdd></DivStdAdd>, <Home></Home>, <Account />]}
           />
           <Route
             path="/divstdtable"
@@ -140,7 +140,7 @@ function App() {
             element={[<Dashboard></Dashboard>, <Home></Home>, <Account />]}
           />
           <Route
-            path="/principle"
+            path="/nopage"
             element={[<NoPageFound></NoPageFound>, <Home></Home>, <Account />]}
           />
           {/* <Route path="/login" element={<Login></Login>} />

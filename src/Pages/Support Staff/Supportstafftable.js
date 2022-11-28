@@ -43,7 +43,7 @@ const Supportstafftable = () => {
 
   const deleteuser = async (SupportId) => {
     const res2 = await fetch(
-      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/delete/${SupportId}`,
+      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/support/delete/${SupportId}`,
       {
         method: "DELETE",
         headers: {

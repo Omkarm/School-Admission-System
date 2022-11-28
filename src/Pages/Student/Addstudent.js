@@ -232,7 +232,7 @@ const Addstudent = () => {
       alert("fill the data");
     } else {
       alert(
-        "Student Added Successfully. Please Add the Department Details in System/Department OR Click Next "
+        "Student Added Successfully. Please Add the Teachers Details in Staff/Teachers OR Click Next "
       );
     }
   };
@@ -585,21 +585,17 @@ const Addstudent = () => {
                     <NavLink to={`/admission`}>
                       <button className="btn btn-dark ">Back</button>
                     </NavLink>
-                    {/* <NavLink to={`/deptregister`}>
+                    <NavLink to={`/teachertable`}>
                       <button
                         type="submit"
                         required
                         disabled={
                           (!inpval.DivStd,
+                          !inpval.RollNo,
                           !inpval.FirstName,
                           !inpval.LastName,
-                          !inpval.StudentEmail,
                           !inpval.Age,
                           !inpval.Gender,
-                          !inpval.StudentSalary,
-                          !inpval.StudentGrade,
-                          !inpval.StudentDepartment,
-                          !inpval.StudentL1,
                           !inpval.DateOfJoining,
                           !inpval.DOB,
                           !inpval.Phone)
@@ -616,7 +612,7 @@ const Addstudent = () => {
                       >
                         Next
                       </button>
-                    </NavLink> */}
+                    </NavLink>
                   </div>
                 </form>
               </div>

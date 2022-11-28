@@ -29,17 +29,17 @@ const Account = () => {
                 <h5>Omkar More</h5>
               </div>
               <li>
-                <a className="dropdown-item" href="/account">
+                <a className="dropdown-item" href="/nopage">
                   Account
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="/personalproject">
+                <a className="dropdown-item" href="/nopage">
                   Personal Projects
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="/settings">
+                <a className="dropdown-item" href="/nopage">
                   Settings
                 </a>
               </li>

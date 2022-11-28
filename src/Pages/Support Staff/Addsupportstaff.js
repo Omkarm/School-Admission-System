@@ -234,9 +234,7 @@ const Addsupportstaff = () => {
     if (res.status === 422 || !data) {
       alert("fill the data");
     } else {
-      alert(
-        "Support Added Successfully. Please Add the Department Details in System/Department OR Click Next "
-      );
+      alert("Support Added Successfully. ");
     }
   };
 

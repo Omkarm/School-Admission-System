@@ -231,7 +231,7 @@ const AddTeacher = () => {
       alert("fill the data");
     } else {
       alert(
-        "Teacher Added Successfully. Please Add the Department Details in System/Department OR Click Next "
+        "Teacher Added Successfully. Please Add the Other Staff Details in Staff/Support Staff OR Click Next "
       );
     }
   };
@@ -585,6 +585,34 @@ const AddTeacher = () => {
                   >
                     <NavLink to={`/teachertable`}>
                       <button className="btn btn-dark ">Back</button>
+                    </NavLink>{" "}
+                    <NavLink to={`/supportstaff`}>
+                      <button
+                        type="submit"
+                        required
+                        disabled={
+                          (!inpval.TeacherId,
+                          !inpval.TeacherFirstName,
+                          !inpval.TeacherLastName,
+                          !inpval.TeacherEmail,
+                          !inpval.TeacherAge,
+                          !inpval.TeacherGender,
+                          !inpval.TeacherPhone,
+                          !inpval.TeacherBirthdate,
+                          !inpval.DateOfJoining)
+                        } // onClick={() => {
+                        //   addinpdata();
+                        // }}
+                        className="btn btn-dark "
+                        style={{
+                          flex: 2,
+                          flexDirection: "row",
+                          marginLeft: 20,
+                          float: "right",
+                        }}
+                      >
+                        Next
+                      </button>
                     </NavLink>
                   </div>
                 </form>

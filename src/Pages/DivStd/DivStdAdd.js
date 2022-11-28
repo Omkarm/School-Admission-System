@@ -140,7 +140,7 @@ const DivStdAdd = () => {
       body: data,
     })
       .then((result) => {
-        console.log("ImGeographyTeacher Send Successfully");
+        console.log("Image Send Successfully");
       })
       .catch((err) => {
         console.log(err.messGeographyTeacher);
@@ -230,7 +230,7 @@ const DivStdAdd = () => {
       alert("fill the data");
     } else {
       alert(
-        "Student Added Successfully. Please Add the Department Details in System/Department OR Click Next "
+        "Data Added Successfully. Please Add the Student Details in Student/Add Student OR Click Next "
       );
     }
   };
@@ -575,7 +575,7 @@ const DivStdAdd = () => {
                     <NavLink to={`/divstdtable`}>
                       <button className="btn btn-dark ">Back</button>
                     </NavLink>
-                    {/* <NavLink to={`/deptregister`}>
+                    <NavLink to={`/studenttable`}>
                       <button
                         type="submit"
                         required
@@ -583,15 +583,11 @@ const DivStdAdd = () => {
                           (!inpval.DivStd,
                           !inpval.ClassTeacher,
                           !inpval.MathsTeacher,
-                          !inpval.StudentEmail,
                           !inpval.GeographyTeacher,
                           !inpval.HistoryTeacher,
-                          !inpval.StudentSalary,
-                          !inpval.StudentGrade,
-                          !inpval.StudentDepartment,
-                          !inpval.StudentL1,
                           !inpval.ScienceTeacher,
                           !inpval.HindiTeacher,
+                          !inpval.MarathiTeacher,
                           !inpval.EnglishTeacher)
                         } // onClick={() => {
                         //   addinpdata();
@@ -606,7 +602,7 @@ const DivStdAdd = () => {
                       >
                         Next
                       </button>
-                    </NavLink> */}
+                    </NavLink>
                   </div>
                 </form>
               </div>

@@ -220,7 +220,7 @@ const Home = () => {
                         <a
                           className="nav-link active"
                           aria-current="page"
-                          href="/principle"
+                          href="/nopage"
                           style={{ textAlign: "center" }}
                         >
                           Principle

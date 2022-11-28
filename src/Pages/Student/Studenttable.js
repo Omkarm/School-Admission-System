@@ -43,7 +43,7 @@ const Studenttable = () => {
 
   const deleteuser = async (DivStd) => {
     const res2 = await fetch(
-      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/delete/${DivStd}`,
+      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/student/delete/${DivStd}`,
       {
         method: "DELETE",
         headers: {

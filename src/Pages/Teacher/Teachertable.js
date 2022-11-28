@@ -43,7 +43,7 @@ const Teachertable = () => {
 
   const deleteuser = async (TeacherId) => {
     const res2 = await fetch(
-      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/delete/${TeacherId}`,
+      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/teacher/delete/${TeacherId}`,
       {
         method: "DELETE",
         headers: {
