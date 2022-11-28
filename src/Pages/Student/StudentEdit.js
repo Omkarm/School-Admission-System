@@ -339,7 +339,7 @@ const StudentEdit = () => {
                       type="text"
                       required
                       className="form-control"
-                      placeholder="eg: 10-A"
+                      placeholder="Enter Roll No."
                       id="ExampleInputDivStd"
                       value={inpval.RollNo}
                       onChange={setdata}

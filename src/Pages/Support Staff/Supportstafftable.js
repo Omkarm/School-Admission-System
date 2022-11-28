@@ -317,7 +317,6 @@ const Supportstafftable = () => {
                       <th scope="col">Gender</th>
                       <th scope="col">Birthdate</th>
                       <th scope="col">Phone Number</th>
-                      <th scope="col">Division</th>
                       <th scope="col">DateOfJoining</th>
                       <th scope="col">LastDate</th>
                       <th scope="col"></th>
@@ -368,9 +367,7 @@ const Supportstafftable = () => {
                             <td>
                               <b>{element.SupportPhone}</b>
                             </td>
-                            <td>
-                              <b>{element.SupportDivision}</b>
-                            </td>
+
                             <td>
                               <b>{element.DateOfJoining}</b>
                             </td>

@@ -572,10 +572,10 @@ const DivStdAdd = () => {
                       marginLeft: 20,
                     }}
                   >
-                    <NavLink to={`/Student`}>
+                    <NavLink to={`/divstdtable`}>
                       <button className="btn btn-dark ">Back</button>
                     </NavLink>
-                    <NavLink to={`/deptregister`}>
+                    {/* <NavLink to={`/deptregister`}>
                       <button
                         type="submit"
                         required
@@ -606,7 +606,7 @@ const DivStdAdd = () => {
                       >
                         Next
                       </button>
-                    </NavLink>
+                    </NavLink> */}
                   </div>
                 </form>
               </div>

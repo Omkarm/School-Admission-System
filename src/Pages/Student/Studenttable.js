@@ -41,9 +41,9 @@ const Studenttable = () => {
     getdata();
   }, []);
 
-  const deleteuser = async (StudentCode) => {
+  const deleteuser = async (DivStd) => {
     const res2 = await fetch(
-      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/delete/${StudentCode}`,
+      `https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/delete/${DivStd}`,
       {
         method: "DELETE",
         headers: {
@@ -369,7 +369,7 @@ const Studenttable = () => {
                             </NavLink> */}
                               <button
                                 className="btn btn-danger"
-                                onClick={() => deleteuser(element.StudentCode)}
+                                onClick={() => deleteuser(element.DivStd)}
                               >
                                 delete
                               </button>
