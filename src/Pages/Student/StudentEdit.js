@@ -14,6 +14,7 @@ import {
 const StudentEdit = () => {
   const [inpval, setINP] = useState({
     DivStd: "",
+    RollNo: "",
     FirstName: "",
     LastName: "",
     Age: "",
@@ -189,6 +190,7 @@ const StudentEdit = () => {
     e.preventDefault();
     const {
       DivStd,
+      RollNo,
       FirstName,
       LastName,
       Age,
@@ -208,6 +210,7 @@ const StudentEdit = () => {
       },
       body: JSON.stringify({
         DivStd,
+        RollNo,
         FirstName,
         LastName,
         Age,
@@ -328,6 +331,21 @@ const StudentEdit = () => {
 
               <div class="card-body">
                 <form onSubmit={updateuser}>
+                  <div class="mb-3">
+                    <label class="small mb-1" for="inputUsername">
+                      Roll No.:
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="form-control"
+                      placeholder="eg: 10-A"
+                      id="ExampleInputDivStd"
+                      value={inpval.RollNo}
+                      onChange={setdata}
+                      name="RollNo"
+                    />
+                  </div>
                   {/* -----------------------------------------------DivStd------------------------------------------------------- */}
                   <div class="mb-3">
                     <label class="small mb-1" for="inputUsername">
