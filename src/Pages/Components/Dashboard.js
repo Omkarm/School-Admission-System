@@ -59,16 +59,7 @@ const Dashboard = () => {
               </div>
               <div className="count">
                 <div className="numbers">
-                  <h5 style={{ color: "green", fontSize: "35px" }}>
-                    {getuserdata.map((element, id, { length }) => {
-                      return (
-                        <th scope="row">
-                          <b>{id + 1}</b>
-                        </th>
-                      );
-                    })}
-                    50
-                  </h5>
+                  <h5 style={{ color: "green", fontSize: "35px" }}>50</h5>
                 </div>
                 {/* <div class="progress" style={{ height: "25px" }}>
                     <div
