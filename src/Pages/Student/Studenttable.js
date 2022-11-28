@@ -253,6 +253,17 @@ const Studenttable = () => {
                           <input
                             id="searchtext"
                             type="text"
+                            placeholder="Search RollNo"
+                            onChange={handleSearch}
+                          />
+                        </div>
+                        Roll No.
+                      </th>
+                      <th scope="col">
+                        <div class="form-outline mb-4 ">
+                          <input
+                            id="searchtext"
+                            type="text"
                             placeholder="Search StudentCode"
                             onChange={handleSearch}
                           />
@@ -299,7 +310,7 @@ const Studenttable = () => {
                         <>
                           <tr>
                             <td>
-                              <NavLink to={`/empedit/${element.StudentCode}`}>
+                              <NavLink to={`/studentedit/${element.DivStd}`}>
                                 <button className="btn btn-link">
                                   <b>edit</b>
                                 </button>
@@ -310,6 +321,9 @@ const Studenttable = () => {
                             </th>
                             <td>
                               <img src={file} />
+                            </td>
+                            <td>
+                              <b>{element.RollNo}</b>
                             </td>
 
                             <td>

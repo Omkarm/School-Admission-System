@@ -10,7 +10,7 @@ let urldelete =
   "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/student/delete/:id";
 
 let urlupdate =
-  "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/student";
+  "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/student/update";
 
 let urldpost =
   "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/department";

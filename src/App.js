@@ -44,6 +44,7 @@ import Account from "./Pages/Components/Account";
 import Dashboard from "./Pages/Components/Dashboard";
 
 import Studenttable from "./Pages/Student/Studenttable";
+import StudentEdit from "./Pages/Student/StudentEdit";
 import Addstudent from "./Pages/Student/Addstudent";
 
 import Main from "./Pages/Student/Main";
@@ -91,6 +92,11 @@ function App() {
           <Route
             path="/addstudent"
             element={[<Addstudent></Addstudent>, <Home></Home>, <Account />]}
+          />
+
+          <Route
+            path="/studentedit/:id"
+            element={[<StudentEdit></StudentEdit>, <Home></Home>, <Account />]}
           />
           <Route
             path="/teachertable"

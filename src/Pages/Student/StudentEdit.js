@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import Multiselect from "multiselect-react-dropdown";
 
-import { urlpost, urlget } from "../Unknown/Config";
+import { urlupdate, urlget } from "../Unknown/Config";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -11,10 +11,9 @@ import {
 } from "react-router-dom";
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
-const Addstudent = () => {
+const StudentEdit = () => {
   const [inpval, setINP] = useState({
     DivStd: "",
-    RollNo: "",
     FirstName: "",
     LastName: "",
     Age: "",
@@ -186,11 +185,10 @@ const Addstudent = () => {
   //     });
   // };
 
-  const addinpdata = async (e) => {
+  const updateuser = async (e) => {
     e.preventDefault();
     const {
       DivStd,
-      RollNo,
       FirstName,
       LastName,
       Age,
@@ -203,14 +201,13 @@ const Addstudent = () => {
     } = inpval; ////////////////////////////////////
 
     const { Skills, languages } = userinfo;
-    const res = await fetch(urlpost, {
-      method: "POST",
+    const res2 = await fetch(urlupdate, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         DivStd,
-        RollNo,
         FirstName,
         LastName,
         Age,
@@ -225,18 +222,15 @@ const Addstudent = () => {
       }),
     });
 
-    const data = await res.json();
-    console.log(data);
+    const data2 = await res2.json();
+    console.log(data2);
 
-    if (res.status === 422 || !data) {
+    if (res2.status === 422 || !data2) {
       alert("fill the data");
     } else {
-      alert(
-        "Student Added Successfully. Please Add the Department Details in System/Department OR Click Next "
-      );
+      alert("Data Updated Succesfully");
     }
   };
-
   const [getuserdata, setUserdata, setDLTdata] = useState([]);
   const [selects, setSelects] = useState();
 
@@ -333,22 +327,7 @@ const Addstudent = () => {
               </div>
 
               <div class="card-body">
-                <form onSubmit={addinpdata}>
-                  <div class="mb-3">
-                    <label class="small mb-1" for="inputUsername">
-                      Roll No.:
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      placeholder="Enter Roll No."
-                      id="ExampleInputDivStd"
-                      value={inpval.RollNo}
-                      onChange={setdata}
-                      name="RollNo"
-                    />
-                  </div>
+                <form onSubmit={updateuser}>
                   {/* -----------------------------------------------DivStd------------------------------------------------------- */}
                   <div class="mb-3">
                     <label class="small mb-1" for="inputUsername">
@@ -629,4 +608,4 @@ const Addstudent = () => {
   );
 };
 
-export default Addstudent;
+export default StudentEdit;
