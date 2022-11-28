@@ -87,7 +87,7 @@ const Teachertable = () => {
 
   /////////////////////////////////////////////////////////////////////////////////////
 
-  const handleSearchall = (event) => {
+  const handleSearchemail = (event) => {
     let searchtextall = event.target.value;
 
     console.log(searchtextall);
@@ -95,7 +95,7 @@ const Teachertable = () => {
     console.log(getuserdata);
 
     allresult = getuserdata.filter((item) =>
-      item.TeacherId.toLowerCase()
+      item.TeacherEmail.toLowerCase()
         .toLowerCase()
         .includes(searchtextall.toLowerCase())
     );
@@ -115,7 +115,7 @@ const Teachertable = () => {
     console.log(getuserdata);
 
     filteredresult = getuserdata.filter((item) =>
-      item.TeacherFirstName.toLowerCase().includes(searchtext.toLowerCase())
+      item.TeacherId.toLowerCase().includes(searchtext.toLowerCase())
     );
 
     setUserdata(filteredresult);
@@ -131,7 +131,7 @@ const Teachertable = () => {
     console.log(getuserdata);
 
     filteredresult1 = getuserdata.filter((item) =>
-      item.TeacherEmail.toLowerCase().includes(searchtext1.toLowerCase())
+      item.TeacherFirstName.toLowerCase().includes(searchtext1.toLowerCase())
     );
 
     setUserdata(filteredresult1);
@@ -148,7 +148,7 @@ const Teachertable = () => {
     console.log(getuserdata);
 
     filteredresult2 = getuserdata.filter((item) =>
-      item.TeacherFirstName.toLowerCase().includes(searchtext2.toLowerCase())
+      item.TeacherLastName.toLowerCase().includes(searchtext2.toLowerCase())
     );
 
     setUserdata(filteredresult2);
@@ -259,6 +259,17 @@ const Teachertable = () => {
                         </div>
                         TeacherId
                       </th>
+                      <th scope="col">
+                        <div class="form-outline mb-4 ">
+                          <input
+                            id="searchtext"
+                            type="text"
+                            placeholder="Search TeacherId"
+                            onChange={handleSearchemail}
+                          />
+                        </div>
+                        Email
+                      </th>
 
                       <th scope="col">
                         <div class="form-outline mb-4">
@@ -286,7 +297,6 @@ const Teachertable = () => {
                       <th scope="col">Gender</th>
                       <th scope="col">Birthdate</th>
                       <th scope="col">Phone Number</th>
-                      <th scope="col">Division</th>
                       <th scope="col">DateOfJoining</th>
                       <th scope="col">LastDate</th>
 
@@ -300,14 +310,14 @@ const Teachertable = () => {
                         <>
                           <tr>
                             <td>
-                              <NavLink to={`/empedit/${element.TeacherId}`}>
+                              <NavLink to={`/teacheredit/${element.TeacherId}`}>
                                 <button className="btn btn-link">
                                   <b>edit</b>
                                 </button>
                               </NavLink>
                             </td>
                             <th scope="row">
-                              <b>{id++}</b>
+                              <b>{id + 1}</b>
                             </th>
                             <td>
                               <img src={file} />
@@ -315,6 +325,9 @@ const Teachertable = () => {
 
                             <td>
                               <b>{element.TeacherId}</b>
+                            </td>
+                            <td>
+                              <b>{element.TeacherEmail}</b>
                             </td>
 
                             <td>
@@ -335,9 +348,7 @@ const Teachertable = () => {
                             <td>
                               <b>{element.TeacherPhone}</b>
                             </td>
-                            <td>
-                              <b>{element.TeacherDivision}</b>
-                            </td>
+
                             <td>
                               <b>{element.DateOfJoining}</b>
                             </td>

@@ -12,7 +12,7 @@ import {
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
 //
-const AddTeacher = () => {
+const TeacherEdit = () => {
   const [inpval, setINP] = useState({
     TeacherId: "",
     TeacherEmail: "",
@@ -823,4 +823,4 @@ const AddTeacher = () => {
   );
 };
 
-export default AddTeacher;
+export default TeacherEdit;

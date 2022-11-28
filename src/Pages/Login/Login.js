@@ -47,7 +47,7 @@ const Login = () => {
               <p className="forgot-password text-right mt-2">
                 Forgot <a href="#">password?</a>
                 <div className="signup">
-                  Create Account <a href="signup">Sign up</a>
+                  Create Account <a href="/signup">Sign up</a>
                 </div>
                 <br></br>
               </p>

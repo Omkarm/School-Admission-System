@@ -3,6 +3,8 @@ import { CSVLink } from "react-csv";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
+import { divstdurlget, urldget, urldelete } from "../Unknown/ConfigDivStd";
+
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -12,6 +14,32 @@ import Navbar from "./Navbar";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const Dashboard = () => {
+  const [getuserdata, setUserdata, setDLTdata] = useState([]);
+  console.log(getuserdata);
+
+  const getdata = async (e) => {
+    const res = await fetch(divstdurlget, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status === 422 || !data) {
+      console.log("error");
+    } else {
+      setUserdata(data);
+      console.log("getdata");
+    }
+  };
+
+  useEffect(() => {
+    getdata();
+  }, []);
+
   return (
     // ---------------------------------------NAV BAR---------------------------------------------- //
 
@@ -31,7 +59,16 @@ const Dashboard = () => {
               </div>
               <div className="count">
                 <div className="numbers">
-                  <h5 style={{ color: "green", fontSize: "35px" }}>50</h5>
+                  <h5 style={{ color: "green", fontSize: "35px" }}>
+                    {getuserdata.map((element, id, { length }) => {
+                      return (
+                        <th scope="row">
+                          <b>{id + 1}</b>
+                        </th>
+                      );
+                    })}
+                    50
+                  </h5>
                 </div>
                 {/* <div class="progress" style={{ height: "25px" }}>
                     <div

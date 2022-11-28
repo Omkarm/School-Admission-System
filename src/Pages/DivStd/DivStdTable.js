@@ -115,7 +115,7 @@ const DivStdTable = () => {
     console.log(getuserdata);
 
     filteredresult = getuserdata.filter((item) =>
-      item.StudentCode.toLowerCase().includes(searchtext.toLowerCase())
+      item.DivStd.toLowerCase().includes(searchtext.toLowerCase())
     );
 
     setUserdata(filteredresult);
@@ -131,7 +131,7 @@ const DivStdTable = () => {
     console.log(getuserdata);
 
     filteredresult1 = getuserdata.filter((item) =>
-      item.StudentEmail.toLowerCase().includes(searchtext1.toLowerCase())
+      item.ClassTeacher.toLowerCase().includes(searchtext1.toLowerCase())
     );
 
     setUserdata(filteredresult1);
@@ -273,7 +273,7 @@ const DivStdTable = () => {
                         </div>
                         ClassTeacher
                       </th>
-                      <th scope="col">
+                      {/* <th scope="col">
                         <div class="form-outline mb-4">
                           <input
                             id="searchtext"
@@ -283,7 +283,7 @@ const DivStdTable = () => {
                           />
                         </div>
                         EnglishTeacher
-                      </th>
+                      </th> */}
                       <th scope="col">HindiTeacher</th>
                       <th scope="col">MarathiTeacher</th>
                       <th scope="col">MathsTeacher</th>
@@ -309,7 +309,7 @@ const DivStdTable = () => {
                               </NavLink>
                             </td>
                             <th scope="row">
-                              <b>{id++}</b>
+                              <b>{id + 1}</b>
                             </th>
                             <td>
                               <img src={file} />

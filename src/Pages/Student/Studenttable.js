@@ -115,7 +115,7 @@ const Studenttable = () => {
     console.log(getuserdata);
 
     filteredresult = getuserdata.filter((item) =>
-      item.StudentCode.toLowerCase().includes(searchtext.toLowerCase())
+      item.DivStd.toLowerCase().includes(searchtext.toLowerCase())
     );
 
     setUserdata(filteredresult);
@@ -131,7 +131,7 @@ const Studenttable = () => {
     console.log(getuserdata);
 
     filteredresult1 = getuserdata.filter((item) =>
-      item.StudentEmail.toLowerCase().includes(searchtext1.toLowerCase())
+      item.FirstName.toLowerCase().includes(searchtext1.toLowerCase())
     );
 
     setUserdata(filteredresult1);
@@ -148,7 +148,7 @@ const Studenttable = () => {
     console.log(getuserdata);
 
     filteredresult2 = getuserdata.filter((item) =>
-      item.StudentFirstName.toLowerCase().includes(searchtext2.toLowerCase())
+      item.LastName.toLowerCase().includes(searchtext2.toLowerCase())
     );
 
     setUserdata(filteredresult2);
@@ -266,7 +266,7 @@ const Studenttable = () => {
                             id="searchtext"
                             type="text"
                             placeholder="Search FirstName"
-                            onChange={handleSearch2}
+                            onChange={handleSearch1}
                           />
                         </div>
                         FirstName
@@ -277,7 +277,7 @@ const Studenttable = () => {
                             id="searchtext"
                             type="text"
                             placeholder="Search LastName"
-                            onChange={handleSearch3}
+                            onChange={handleSearch2}
                           />
                         </div>
                         LastName
@@ -306,7 +306,7 @@ const Studenttable = () => {
                               </NavLink>
                             </td>
                             <th scope="row">
-                              <b>{id++}</b>
+                              <b>{id + 1}</b>
                             </th>
                             <td>
                               <img src={file} />

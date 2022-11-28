@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import axios, { post } from "axios";
-
+//ww
 import Multiselect from "multiselect-react-dropdown";
 
-import { turlpost, turlget } from "../Unknown/ConfigTeacher";
+import { staffurlupdate, staffurlget } from "../Unknown/ConfigSupport";
 import {
   NavLink,
   UNSAFE_DataRouterStateContet,
@@ -11,20 +11,22 @@ import {
 } from "react-router-dom";
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
-//
-const AddTeacher = () => {
+const SupportEdit = () => {
   const [inpval, setINP] = useState({
-    TeacherId: "",
-    TeacherEmail: "",
-    TeacherFirstName: "",
-    TeacherLastName: "",
-    TeacherAge: "",
-    TeacherGender: "",
+    SupportId: "",
+    SupportEmail: "",
+    SupportFirstName: "",
+    SupportLastName: "",
+    Role: "",
+    SupportAge: "",
+    SupportGender: "",
+    SupportDivision: "",
+    SupportL1: "",
     DateOfJoining: "",
     LastDate: "",
     Profile: "",
-    TeacherBirthdate: "",
-    TeacherPhone: "",
+    SupportBirthdate: "",
+    SupportPhone: "",
     // Skills: [],
     // languages: [],
   });
@@ -171,7 +173,7 @@ const AddTeacher = () => {
 
   // const handleApi = () => {
   //   //call the api
-  //   const url = "http://localhost:5000/Teacher";
+  //   const url = "http://localhost:5000/Support";
 
   //   const formData = new FormData();
   //   formData.append("image", file);
@@ -187,52 +189,56 @@ const AddTeacher = () => {
   //     });
   // };
 
-  const addinpdata = async (e) => {
+  const updateuser = async (e) => {
     e.preventDefault();
     const {
-      TeacherId,
-      TeacherEmail,
-      TeacherFirstName,
-      TeacherLastName,
-      TeacherAge,
-      TeacherGender,
+      SupportId,
+      SupportEmail,
+      SupportFirstName,
+      SupportLastName,
+      Role,
+      SupportAge,
+      SupportGender,
+      SupportDivision,
       DateOfJoining,
       LastDate,
-      TeacherProfile,
-      TeacherBirthdate,
-      TeacherPhone,
+      Profile,
+      SupportBirthdate,
+      SupportPhone,
     } = inpval; ////////////////////////////////////
 
     const { Skills, languages } = userinfo;
-    const res = await fetch(turlpost, {
-      method: "POST",
+    const res2 = await fetch(staffurlupdate, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        TeacherId,
-        TeacherEmail,
-        TeacherFirstName,
-        TeacherLastName,
-        TeacherAge,
-        TeacherGender,
+        SupportId,
+        SupportEmail,
+        SupportFirstName,
+        SupportLastName,
+        Role,
+        SupportAge,
+        SupportGender,
+        SupportDivision,
         DateOfJoining,
         LastDate,
-        TeacherProfile,
-        TeacherBirthdate,
-        TeacherPhone,
+        Profile,
+        SupportBirthdate,
+        SupportPhone,
+        Skills,
+        languages,
       }),
     });
 
-    const data = await res.json();
-    console.log(data);
+    const data2 = await res2.json();
+    console.log(data2);
 
-    if (res.status === 422 || !data) {
+    if (res2.status === 422 || !data2) {
       alert("fill the data");
     } else {
-      alert(
-        "Teacher Added Successfully. Please Add the Department Details in System/Department OR Click Next "
-      );
+      alert("Data Updated Succesfully");
     }
   };
 
@@ -242,7 +248,7 @@ const AddTeacher = () => {
   console.log(getuserdata);
 
   const getdata = async (e) => {
-    const res = await fetch(turlget, {
+    const res = await fetch(staffurlget, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -303,7 +309,7 @@ const AddTeacher = () => {
           <div class="col-xl-12">
             {/* <!-- Account details card--> */}
             <div class="card mb-4">
-              <div class="card-header">Teacher Joining Details</div>
+              <div class="card-header">Support Joining Details</div>
               <br></br>
               <div class="cardprofile-body text-center">
                 {/* <!-- Profile picture image--> */}
@@ -332,27 +338,42 @@ const AddTeacher = () => {
               </div>
 
               <div class="card-body">
-                <form onSubmit={addinpdata}>
-                  {/* -----------------------------------------------TeacherId------------------------------------------------------- */}
+                <form onSubmit={updateuser}>
+                  {/* -----------------------------------------------SupportId------------------------------------------------------- */}
                   <div class="mb-3">
                     <label class="small mb-1" for="inputUsername">
-                      Teacher Code:
+                      Support Code:
                     </label>
                     <input
                       type="text"
                       required
                       className="form-control"
                       placeholder="Enter Salary Code:"
-                      id="ExampleInputTeacherId"
-                      value={inpval.TeacherId}
+                      id="ExampleInputSupportId"
+                      value={inpval.SupportId}
                       onChange={setdata}
-                      name="TeacherId"
+                      name="SupportId"
                     />
                   </div>
 
-                  {/* -----------------------------------------------TeacherEmail------------------------------------------------------- */}
+                  <div class="mb-3">
+                    <label class="small mb-1" for="inputUsername">
+                      Support Role:
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="form-control"
+                      placeholder="Enter Support Role:"
+                      id="ExampleInputSupportId"
+                      value={inpval.Role}
+                      onChange={setdata}
+                      name="Role"
+                    />
+                  </div>
+                  {/* -----------------------------------------------SupportEmail------------------------------------------------------- */}
 
-                  {/* -----------------------------------------------TeacherFirstName------------------------------------------------------- */}
+                  {/* -----------------------------------------------SupportFirstName------------------------------------------------------- */}
                   <div class="row gx-3 mb-3">
                     {/* <!-- Form Group (first name)--> */}
                     <div class="col-md-6">
@@ -365,12 +386,12 @@ const AddTeacher = () => {
                         className="form-control"
                         placeholder="Enter First name:"
                         id="ExampleInputFirstName"
-                        value={inpval.TeacherFirstName}
+                        value={inpval.SupportFirstName}
                         onChange={setdata}
-                        name="TeacherFirstName"
+                        name="SupportFirstName"
                       />
                     </div>
-                    {/* -----------------------------------------------TeacherLastName------------------------------------------------------- */}
+                    {/* -----------------------------------------------SupportLastName------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputLastName">
                         Last name:
@@ -381,13 +402,13 @@ const AddTeacher = () => {
                         className="form-control"
                         placeholder="Enter Last name:"
                         id="ExampleInputLastName"
-                        value={inpval.TeacherLastName}
+                        value={inpval.SupportLastName}
                         onChange={setdata}
-                        name="TeacherLastName"
+                        name="SupportLastName"
                       />
                     </div>
                   </div>
-                  {/* -----------------------------------------------TeacherAge------------------------------------------------------- */}
+                  {/* -----------------------------------------------SupportAge------------------------------------------------------- */}
                   <div class="row gx-3 mb-3">
                     {/* <!-- Form Group (organization name)--> */}
                     <div class="col-md-6">
@@ -400,12 +421,12 @@ const AddTeacher = () => {
                         className="form-control"
                         placeholder="Enter Age"
                         id="ExampleInputAge"
-                        value={inpval.TeacherAge}
+                        value={inpval.SupportAge}
                         onChange={setdata}
-                        name="TeacherAge"
+                        name="SupportAge"
                       />
                     </div>
-                    {/* -----------------------------------------------TeacherGender------------------------------------------------------- */}
+                    {/* -----------------------------------------------SupportGender------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputLocation">
                         Gender:
@@ -420,7 +441,7 @@ const AddTeacher = () => {
                           value="male"
                           //   checked={addinpdata === "male"}
                           onChange={setdata}
-                          name="TeacherGender"
+                          name="SupportGender"
                         />{" "}
                         Male
                       </>{" "}
@@ -433,7 +454,7 @@ const AddTeacher = () => {
                           value="female"
                           //   checked={addinpdata === "male"}
                           onChange={setdata}
-                          name="TeacherGender"
+                          name="SupportGender"
                         />{" "}
                         Female
                       </>{" "}
@@ -446,7 +467,7 @@ const AddTeacher = () => {
                           value="Trans"
                           //   checked={addinpdata === "male"}
                           onChange={setdata}
-                          name="TeacherGender"
+                          name="SupportGender"
                         />{" "}
                         Trans
                       </>
@@ -456,9 +477,9 @@ const AddTeacher = () => {
                       <select
                         required
                         class="form-control select2"
-                        value={inpval.TeacherGender}
+                        value={inpval.SupportGender}
                         onChange={setdata}
-                        name="TeacherGender"
+                        name="SupportGender"
                       >
                         <option>Select Gender----</option>
                         <option>Male</option>
@@ -469,23 +490,36 @@ const AddTeacher = () => {
                   </div>
 
                   <div class="row gx-3 mb-3">
-                    {/* -----------------------------------------------TeacherDepartment------------------------------------------------------- */}
+                    {/* -----------------------------------------------SupportDepartment------------------------------------------------------- */}
                     <div class="col-md-6">
-                      <label class="small mb-1" for="inputEmailAddress">
-                        Teacher Email:
+                      <label class="small mb-1" for="inputFirstName">
+                        Division Name:
                       </label>
-                      <input
-                        type="text"
-                        required
-                        className="form-control"
-                        placeholder="Enter Email:"
-                        id="ExampleInputTeacherEmail"
-                        value={inpval.TeacherEmail}
-                        onChange={setdata}
-                        name="TeacherEmail"
-                      />
-                    </div>
+                      <form class="col-md-12">
+                        <select
+                          required
+                          class="form-control select2"
+                          value={inpval.SupportDivision}
+                          onChange={setdata}
+                          name="SupportDivision"
+                        >
+                          <option>Select Division----</option>
+                          <option>A</option>
+                          <option>B</option>
+                          <option>c</option>
+                          <option>D</option>
+                          <option>E</option>
 
+                          {/* {getuserdata.map((element, id) => {
+                      return (
+                        <>
+                          <option>{element.SupportDepartment}</option>
+                        </>
+                      );
+                    })} */}
+                        </select>
+                      </form>
+                    </div>
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputEmailAddress">
                         Date Of Joining:
@@ -501,12 +535,12 @@ const AddTeacher = () => {
                         name="DateOfJoining"
                       />
                     </div>
-                    {/* -----------------------------------------------TeacherL1------------------------------------------------------- */}
+                    {/* -----------------------------------------------SupportL1------------------------------------------------------- */}
                   </div>
                   {/* -----------------------------------------------DateOfJoining------------------------------------------------------- */}
 
                   {/* ----------------------------------------------- Till Date:------------------------------------------------------- */}
-                  {/* -----------------------------------------------TeacherBirthdate------------------------------------------------------- */}
+                  {/* -----------------------------------------------SupportBirthdate------------------------------------------------------- */}
 
                   <div class="row gx-3 mb-3">
                     <div class="col-md-6">
@@ -519,13 +553,13 @@ const AddTeacher = () => {
                         className="form-control"
                         placeholder="dd/mm/yyyy"
                         id="ExampleInputL1"
-                        value={inpval.TeacherBirthdate}
+                        value={inpval.SupportBirthdate}
                         onChange={setdata}
-                        name="TeacherBirthdate"
+                        name="SupportBirthdate"
                       />
                     </div>
 
-                    {/* -----------------------------------------------TeacherPhone------------------------------------------------------- */}
+                    {/* -----------------------------------------------SupportPhone------------------------------------------------------- */}
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputBirthday">
                         Phone number:
@@ -536,9 +570,9 @@ const AddTeacher = () => {
                         className="form-control"
                         placeholder="eg: +91 9876543210"
                         id="ExampleInputL1"
-                        value={inpval.TeacherPhone}
+                        value={inpval.SupportPhone}
                         onChange={setdata}
-                        name="TeacherPhone"
+                        name="SupportPhone"
                       />
                     </div>
                   </div>
@@ -747,16 +781,16 @@ const AddTeacher = () => {
                     required
                     onClick={addinpdata}
                     disabled={
-                      (!inpval.TeacherId,
-                      !inpval.TeacherFirstName,
-                      !inpval.TeacherLastName,
-                      !inpval.TeacherEmail,
-                      !inpval.TeacherAge,
-                      !inpval.TeacherGender,
-                      !inpval.TeacherSalary,
-                      !inpval.TeacherGrade,
-                      !inpval.TeacherDepartment,
-                      !inpval.TeacherL1,
+                      (!inpval.SupportId,
+                      !inpval.SupportFirstName,
+                      !inpval.SupportLastName,
+                      !inpval.SupportEmail,
+                      !inpval.SupportAge,
+                      !inpval.SupportGender,
+                      !inpval.SupportSalary,
+                      !inpval.SupportGrade,
+                      !inpval.SupportDepartment,
+                      !inpval.SupportL1,
                       !inpval.DateOfJoining)
                     }
                     // onClick={() => {
@@ -776,7 +810,7 @@ const AddTeacher = () => {
                       marginLeft: 20,
                     }}
                   >
-                    <NavLink to={`/Teacher`}>
+                    <NavLink to={`/Support`}>
                       <button className="btn btn-dark ">Back</button>
                     </NavLink>
                     <NavLink to={`/deptregister`}>
@@ -784,19 +818,19 @@ const AddTeacher = () => {
                         type="submit"
                         required
                         disabled={
-                          (!inpval.TeacherId,
-                          !inpval.TeacherFirstName,
-                          !inpval.TeacherLastName,
-                          !inpval.TeacherEmail,
-                          !inpval.TeacherAge,
-                          !inpval.TeacherGender,
-                          !inpval.TeacherSalary,
-                          !inpval.TeacherGrade,
-                          !inpval.TeacherDepartment,
-                          !inpval.TeacherL1,
+                          (!inpval.SupportId,
+                          !inpval.SupportFirstName,
+                          !inpval.SupportLastName,
+                          !inpval.SupportEmail,
+                          !inpval.SupportAge,
+                          !inpval.SupportGender,
+                          !inpval.SupportSalary,
+                          !inpval.SupportGrade,
+                          !inpval.SupportDepartment,
+                          !inpval.SupportL1,
                           !inpval.DateOfJoining,
-                          !inpval.TeacherBirthdate,
-                          !inpval.TeacherPhone)
+                          !inpval.SupportBirthdate,
+                          !inpval.SupportPhone)
                         } // onClick={() => {
                         //   addinpdata();
                         // }}
@@ -823,4 +857,4 @@ const AddTeacher = () => {
   );
 };
 
-export default AddTeacher;
+export default SupportEdit;

@@ -132,7 +132,7 @@ const Supportstafftable = () => {
     console.log(getuserdata);
 
     filteredresult1 = getuserdata.filter((item) =>
-      item.SupportEmail.toLowerCase().includes(searchtext1.toLowerCase())
+      item.Role.toLowerCase().includes(searchtext1.toLowerCase())
     );
 
     setUserdata(filteredresult1);
@@ -308,7 +308,7 @@ const Supportstafftable = () => {
                             id="searchtext"
                             type="text"
                             placeholder="Search Role"
-                            onChange={handleSearch4}
+                            onChange={handleSearch1}
                           />
                         </div>
                         Role
@@ -330,14 +330,14 @@ const Supportstafftable = () => {
                         <>
                           <tr>
                             <td>
-                              <NavLink to={`/empedit/${element.SupportId}`}>
+                              <NavLink to={`/supportedit/${element.SupportId}`}>
                                 <button className="btn btn-link">
                                   <b>edit</b>
                                 </button>
                               </NavLink>
                             </td>
                             <th scope="row">
-                              <b>{id++}</b>
+                              <b>{id + 1}</b>
                             </th>
                             <td>
                               <img src={file} />

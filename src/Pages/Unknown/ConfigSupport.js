@@ -11,7 +11,7 @@ let staffurldelete =
   "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/support/delete/:id";
 
 let staffurlupdate =
-  "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/support";
+  "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/support/update";
 
 let urldpost =
   "https://ryynvhih1f.execute-api.us-east-1.amazonaws.com/supportent";

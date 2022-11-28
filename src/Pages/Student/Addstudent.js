@@ -469,35 +469,7 @@ const Addstudent = () => {
 
                   <div class="row gx-3 mb-3">
                     {/* -----------------------------------------------StudentDepartment------------------------------------------------------- */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputFirstName">
-                        Division Name:
-                      </label>
-                      <form class="col-md-12">
-                        <select
-                          required
-                          class="form-control select2"
-                          value={inpval.StudentDivision}
-                          onChange={setdata}
-                          name="StudentDivision"
-                        >
-                          <option>Select Division----</option>
-                          <option>A</option>
-                          <option>B</option>
-                          <option>c</option>
-                          <option>D</option>
-                          <option>E</option>
 
-                          {/* {getuserdata.map((element, id) => {
-                      return (
-                        <>
-                          <option>{element.StudentDepartment}</option>
-                        </>
-                      );
-                    })} */}
-                        </select>
-                      </form>
-                    </div>
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputEmailAddress">
                         Date Of Joining:
@@ -513,14 +485,6 @@ const Addstudent = () => {
                         name="DateOfJoining"
                       />
                     </div>
-                    {/* -----------------------------------------------StudentL1------------------------------------------------------- */}
-                  </div>
-                  {/* -----------------------------------------------DateOfJoining------------------------------------------------------- */}
-
-                  {/* ----------------------------------------------- Till Date:------------------------------------------------------- */}
-                  {/* -----------------------------------------------DOB------------------------------------------------------- */}
-
-                  <div class="row gx-3 mb-3">
                     <div class="col-md-6">
                       <label class="small mb-1" for="inputPhone">
                         Birth Date:
@@ -536,219 +500,31 @@ const Addstudent = () => {
                         name="DOB"
                       />
                     </div>
+                    {/* -----------------------------------------------StudentL1------------------------------------------------------- */}
+                  </div>
+                  {/* -----------------------------------------------DateOfJoining------------------------------------------------------- */}
 
+                  {/* ----------------------------------------------- Till Date:------------------------------------------------------- */}
+                  {/* -----------------------------------------------DOB------------------------------------------------------- */}
+
+                  <div class="row gx-3 mb-3">
                     {/* -----------------------------------------------Phone------------------------------------------------------- */}
-                    <div class="col-md-6">
-                      <label class="small mb-1" for="inputBirthday">
-                        Phone number:
-                      </label>
-                      <input
-                        type="number"
-                        required
-                        className="form-control"
-                        placeholder="eg: +91 9876543210"
-                        id="ExampleInputL1"
-                        value={inpval.Phone}
-                        onChange={setdata}
-                        name="Phone"
-                      />
-                    </div>
+                    <label class="small mb-1" for="inputBirthday">
+                      Phone number:
+                    </label>
+                    <input
+                      type="number"
+                      required
+                      className="form-control"
+                      placeholder="eg: +91 9876543210"
+                      id="ExampleInputL1"
+                      value={inpval.Phone}
+                      onChange={setdata}
+                      name="Phone"
+                    />
                   </div>
                   <br></br>
 
-                  <div class="card-header">Skills</div>
-                  <div class="cardskills-body text-center">
-                    {/* <!-- Profile picture image--> */}
-                    {/* <Multiselect
-                  isObject={false}
-                  onKeyPressFn={function noRefCheck() {}}
-                  onRemove={function noRefCheck() {}}
-                  onSearch={function noRefCheck() {}}
-                  onSelect={function noRefCheck() {}}
-                  options={["Html", "Css", "Java", "React Js", "Node Js"]}
-                /> */}
-
-                    <form>
-                      <div className="row">
-                        <div className="col-md-6">
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languages"
-                              value="Javascript"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Javascript
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languages"
-                              value="Python"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Python
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languages"
-                              value="Java"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Java
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languages"
-                              value="Node"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Node
-                            </label>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languages"
-                              value="C#"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              C#
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="languages"
-                              value="C++"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              C++
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="Skills"
-                              value="C"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              C
-                            </label>
-                          </div>
-                          <div className="form-check m-3">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              name="Skills"
-                              value="React"
-                              id="flexCheckDefault"
-                              onChange={handleChange}
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="flexCheckDefault"
-                            >
-                              React
-                            </label>
-                          </div>
-                        </div>
-                        {/* <div class="md-12">
-                      <label class="small mb-1" for="inputSkills">
-                        Other:{" "}
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Skills"
-                        id="ExampleInputSalary"
-                        value={userinfo.Skills}
-                        onChange={handleChange}
-                        name="Skills"
-                      />
-                    </div> */}
-                      </div>
-                      {/* <div class="md-6">
-                    <label class="small mb-1" for="inputLastName">
-                      Other Skills:
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      placeholder="Enter L+1"
-                      id="ExampleInputL1"
-                      value={userinfo.Skills}
-                      onChange={handleChange}
-                      name="Skills"
-                    />
-                  </div> */}
-
-                      <div className="form-floating mt-3 mb-3 text-center">
-                        <label htmlFor="exampleFormControlTextarea1">
-                          {/* languages :{" "} */}
-                        </label>
-                        <textarea
-                          className="form-control text"
-                          name="response"
-                          value={userinfo.Skills}
-                          placeholder="The checkbox values will be displayed here "
-                          id="floatingTextarea2"
-                          style={{ height: "150px" }}
-                          onChange={handleChange}
-                        ></textarea>
-                      </div>
-                    </form>
-                  </div>
                   {/* -----------------------------------------------submit------------------------------------------------------- */}
 
                   {/* <!-- Save changes button--> */}
@@ -788,10 +564,10 @@ const Addstudent = () => {
                       marginLeft: 20,
                     }}
                   >
-                    <NavLink to={`/Student`}>
+                    <NavLink to={`/admission`}>
                       <button className="btn btn-dark ">Back</button>
                     </NavLink>
-                    <NavLink to={`/deptregister`}>
+                    {/* <NavLink to={`/deptregister`}>
                       <button
                         type="submit"
                         required
@@ -822,7 +598,7 @@ const Addstudent = () => {
                       >
                         Next
                       </button>
-                    </NavLink>
+                    </NavLink> */}
                   </div>
                 </form>
               </div>
